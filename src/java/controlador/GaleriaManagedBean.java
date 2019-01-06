@@ -1,3 +1,5 @@
+package controlador;
+
 
 
 import java.io.File;
@@ -7,14 +9,16 @@ import javax.inject.Named;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.Part;
 import org.primefaces.event.FileUploadEvent;
 
 
-@Named(value = "galeriaMB")
-@ManagedBean
-@SessionScoped
+//@ManagedBean
+//@ViewScoped
+
+
 public class GaleriaManagedBean {
     
    
@@ -98,7 +102,7 @@ public class GaleriaManagedBean {
         
       try{
          InputStream in= image.getInputStream();
-         File f = new File("/Users/dome9/Desktop/upload/"+image.getSubmittedFileName());
+         File f = new File("/Desktop/upload/"+image.getSubmittedFileName());
          f.createNewFile();
          FileOutputStream out = new FileOutputStream(f);
          
