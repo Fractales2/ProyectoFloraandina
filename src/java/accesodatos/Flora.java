@@ -35,6 +35,10 @@ public class Flora {
         this.Cod_Herbario = Cod_Herbario;
         this.Nombre_Investigador = Nombre_Investigador;
     }
+
+    public Flora() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 
     public String getId_Flora() {

@@ -25,6 +25,10 @@ public class Imagen {
         this.Imagen_Senital = Imagen_Senital;
     }
 
+    public Imagen() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public String getId_Imagen() {
         return Id_Imagen;
     }

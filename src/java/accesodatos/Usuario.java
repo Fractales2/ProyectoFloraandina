@@ -28,6 +28,10 @@ public class Usuario {
         this.Estado_User = Estado_User;
     }
 
+    public Usuario() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public String getId_User() {
         return Id_User;
     }

@@ -11,27 +11,28 @@ import java.util.logging.Logger;
 import conexionBD.AccesoDatos;
 import conexionBD.ConjuntoResultado;
 import conexionBD.Parametro;
-import accesodatos.Familia;
+import accesodatos.Archivo;
 /**
  *
  * @author ASUS
  */
-public class familaLN {
+public class archivoLN {
     
-     public static boolean insertarFamilia(Familia familia) {
+    public static boolean insertarArchivo(Archivo archivo) {
        
          boolean resp = false;
         ArrayList<Parametro> lstpar = new ArrayList<>();
-        //lstpar.add(new Parametro(1,familia.getId_Familia()));
-        lstpar.add(new Parametro(1, familia.getId_Familia()));
-        lstpar.add(new Parametro(2, familia.getNombre_Familia()));
-        String sql = "INSERT INTO public.\"FAMILIA\"(\n" +
-"	\"Id_Familia\", \"Nombre_Familia\")\n" +
-    "	VALUES (?,?);";            
+        lstpar.add(new Parametro(1, archivo.getId_Archivo()));
+        lstpar.add(new Parametro(2, archivo.getId_Flora()));
+        lstpar.add(new Parametro(3, archivo.getArchivo()));
+        lstpar.add(new Parametro(4, archivo.getFormula()));
+        String sql = "INSERT INTO public.\"ARCHIVO\"(\n" +
+"	\"Id_Archivo\", \"Id_Flora\", \"Archivo\", \"Formula\")\n" +
+"	VALUES (?, ?, ?, ?);";            
         try {
             resp = AccesoDatos.ejecutaComando1(sql, lstpar);
         } catch (Exception ex) {
-            Logger.getLogger(familaLN.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(archivoLN.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println(ex.getMessage());
         }
         return resp;

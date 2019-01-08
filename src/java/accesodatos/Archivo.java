@@ -22,6 +22,10 @@ public class Archivo {
         this.Formula = Formula;
     }
 
+    public Archivo() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public String getId_Archivo() {
         return Id_Archivo;
     }

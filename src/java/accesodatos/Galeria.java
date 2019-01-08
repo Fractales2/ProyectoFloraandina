@@ -20,6 +20,10 @@ public class Galeria {
         this.Id_Flora = Id_Flora;
     }
 
+    public Galeria() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public Integer getId_Galeria() {
         return Id_Galeria;
     }

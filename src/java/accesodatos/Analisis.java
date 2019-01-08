@@ -32,6 +32,10 @@ public class Analisis {
         this.Descripcion = Descripcion;
     }
 
+    public Analisis() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public String getId_Segmento() {
         return Id_Segmento;
     }
