@@ -27,10 +27,31 @@
     padding: 5px;
     width: 150px;
 }
+#fondo {
+    float: right;
+    background-color: #045491;
+    padding: 5px;
+    width: 150px;
+}
+#restrictPanel {
+    float: inside;
+    background-color: #045491;
+    padding: 5px;
+    width: 150px;
+   
+}
+#galeria {
+    float: bottom;
+    background-color: #045491;
+    padding: 5px;
+    width: 150px;
+    
+}
+
 
 .center_content {
     position: relative;
-    background-color: #dddddd;
+    background-color: #045491;
     padding: 5px;
 }
 

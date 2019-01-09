@@ -31,10 +31,8 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>faces/index.xhtml</welcome-file>
-        <welcome-file>faces/View/GaleriaFRM.xhtml</welcome-file>
         <welcome-file>faces/View/IndexClient.xhtml</welcome-file>
-        <welcome-file>faces/Templates/IndexPF.xhtml</welcome-file>
+        
     </welcome-file-list>
        
    
