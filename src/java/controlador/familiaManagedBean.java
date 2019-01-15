@@ -21,6 +21,7 @@ import javax.enterprise.context.SessionScoped;
  */
 @Named(value = "familiaManagedBean")
 @SessionScoped
+//@ViewScoped
 
 public class familiaManagedBean implements Serializable{
 
@@ -30,10 +31,33 @@ public class familiaManagedBean implements Serializable{
     private ArrayList<Familia> listafamilia;
     private Familia familianuevo;
     private Familia familiasel;
+    private String nombreFamilia;
+    private int idfamilia;
+    
     public familiaManagedBean() {
         familianuevo = new Familia();
+        cargarFmilia();
     }
     //get and set
+     public final void cargarFmilia() {
+        listafamilia = familaLN.obtenerFamilias();
+    }
+
+    public String getNombreFamilia() {
+        return nombreFamilia;
+    }
+
+    public void setNombreFamilia(String nombreFamilia) {
+        this.nombreFamilia = nombreFamilia;
+    }
+
+    public int getIdfamilia() {
+        return idfamilia;
+    }
+
+    public void setIdfamilia(int idfamilia) {
+        this.idfamilia = idfamilia;
+    }
 
     public ArrayList<Familia> getListafamilia() {
         return listafamilia;
@@ -60,14 +84,15 @@ public class familiaManagedBean implements Serializable{
     }
     
     //funciones
+    
     public void ingresarFamilia() {
+
         try {
             if (familaLN.insertarFamilia(familianuevo)) {
                 FacesMessage facesMsg = new FacesMessage(FacesMessage.SEVERITY_INFO,
                         "Ingreso correcto ", "Los datos se guadaron correctamente");
                 FacesContext.getCurrentInstance().addMessage("successInfo", facesMsg);
-                //cargarmarca();
-                //resetearFitrosTabla("Estación:frmEstacion:tblestaciones");
+                
             }
         } catch (Exception ex) {
             System.out.println("Error: " + ex.getMessage());

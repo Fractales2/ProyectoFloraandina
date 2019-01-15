@@ -36,4 +36,27 @@ public class familaLN {
         }
         return resp;
     }
+     public static ArrayList<Familia> obtenerFamilias(){
+     ArrayList<Familia> listaFamilia = new ArrayList<>();
+     String sql="SELECT * FROM public.\"FAMILIA\";";
+     try{
+     
+     ConjuntoResultado resultado = AccesoDatos.ejecutaQuery(sql);
+     Familia fami;
+     while(resultado.next()){
+     fami = new Familia();
+     //fami.setId_Familia(resultado.getString(0));
+     fami.setNombre_Familia(resultado.getString(1));
+     listaFamilia.add(fami);
+     }
+     }catch (Exception ex){
+         Logger.getLogger(familaLN.class.getName()).log(Level.SEVERE, null, ex);  
+             System.out.println(ex.getMessage());
+     }
+     return listaFamilia;
+     }
+     
+      
+    
+
 }

@@ -27,27 +27,29 @@
 
                                     <h:outputText value="Nombre *" style="color: black; font-family: cursive "/>
                                     <h:inputText value="#{familiaManagedBean.familianuevo.id_Familia}"/>
+
                                     <h:outputText value="Familia *" style="color: black; font-family: cursive "/>
-                                    <select>
-                                        <option value="0">Select One</option>
-                                        <option value="1">Option 1</option>
-                                        <option value="2">Option 2</option>
-                                        <option value="3">Option 3</option>
-                                    </select>
+
+                                    <p:selectOneMenu id="listafamilia1"  value="#{familiaManagedBean.nombreFamilia}" filter="true">
+                                        <f:selectItem itemLabel="Elija una opción" itemValue="#{familiaManagedBean.listafamilia}"/>
+                                        <f:selectItems value="#{familiaManagedBean.listafamilia}" var="fam" itemValue="#{fam.nombre_Familia}"
+                                                       itemLabel="#{fam.nombre_Familia} "/>
+                                       <!-- <p:ajax event="change" listener="#{familiaManagedBean.cargarFmilia()}"/>--> 
+                                    </p:selectOneMenu>
                                     <h:outputText value="Reserva *" style="color: black; font-family: cursive "/>
-                                    <select>
-                                        <option value="0">Select One</option>
-                                        <option value="1">Option 1</option>
-                                        <option value="2">Option 2</option>
-                                        <option value="3">Option 3</option>
-                                    </select>
+                                    <p:selectOneMenu id="listareserva"  value="#{familiaManagedBean.nombreFamilia}" filter="true">
+                                        <f:selectItem itemLabel="Elija una opción" itemValue="#{familiaManagedBean.listafamilia}"/>
+                                        <f:selectItems value="#{familiaManagedBean.listafamilia}" var="fam" itemValue="#{fam.nombre_Familia}"
+                                                       itemLabel="#{fam.nombre_Familia} "/>
+                                       <!-- <p:ajax event="change" listener="#{familiaManagedBean.cargarFmilia()}"/>--> 
+                                    </p:selectOneMenu>
                                     <h:outputText value="Segmento analisado *" style="color: black; font-family: cursive "/>
-                                    <select>
-                                        <option value="0">Select One</option>
-                                        <option value="1">Option 1</option>
-                                        <option value="2">Option 2</option>
-                                        <option value="3">Option 3</option>
-                                    </select>
+                                    <p:selectOneMenu id="listasegmento"  value="#{familiaManagedBean.nombreFamilia}" filter="true">
+                                        <f:selectItem itemLabel="Elija una opción" itemValue="#{familiaManagedBean.listafamilia}"/>
+                                        <f:selectItems value="#{familiaManagedBean.listafamilia}" var="fam" itemValue="#{fam.nombre_Familia}"
+                                                       itemLabel="#{fam.nombre_Familia} "/>
+                                       <!-- <p:ajax event="change" listener="#{familiaManagedBean.cargarFmilia()}"/>--> 
+                                    </p:selectOneMenu>
                                     <h:outputText value="Código*" style="color: black; font-family: cursive"/>
                                     <h:inputText value="#{familiaManagedBean.familianuevo.id_Familia}"/>
                                     <h:outputText value="Número de ficha *" style="color: black; font-family: cursive"/>
@@ -68,51 +70,51 @@
                                     <h:form enctype="multipart/form-data">
                                         <p:growl id="messages" showDetail="true" />
                                         <p:fileUpload value="#{subirimagenMB.file}" mode="simple" skinSimple="true"/>
-                                        </h:form>
+                                    </h:form>
                                     <h:outputText value="Galeria Técnica:" style="color: black; font-family: cursive"/>
                                     <h:outputText value="" style="color: black; font-family: cursive"/>
                                     <h:outputText value="Frontal" style="color: black; font-family: cursive"/>
                                     <h:form enctype="multipart/form-data">
                                         <p:growl id="messages" showDetail="true" />
                                         <p:fileUpload value="#{subirimagenMB.file}" mode="simple" skinSimple="true"/>
-                                        </h:form>
+                                    </h:form>
                                     <h:outputText value="Corte" style="color: black; font-family: cursive"/>
                                     <h:form enctype="multipart/form-data">
                                         <p:growl id="messages" showDetail="true" />
                                         <p:fileUpload value="#{subirimagenMB.file}" mode="simple" skinSimple="true"/>
-                                        </h:form>
+                                    </h:form>
                                     <h:outputText value="Lateral" style="color: black; font-family: cursive"/>
                                     <h:form enctype="multipart/form-data">
                                         <p:growl id="messages" showDetail="true" />
                                         <p:fileUpload value="#{subirimagenMB.file}" mode="simple" skinSimple="true"/>
-                                        </h:form>
+                                    </h:form>
                                     <h:outputText value="Senital" style="color: black; font-family: cursive"/>
                                     <h:form enctype="multipart/form-data">
                                         <p:growl id="messages" showDetail="true" />
                                         <p:fileUpload value="#{subirimagenMB.file}" mode="simple" skinSimple="true"/>
-                                        </h:form>
+                                    </h:form>
                                     <h:outputText value="Archivo imagen:" style="color: black; font-family: cursive"/>
                                     <h:outputText value="" style="color: black; font-family: cursive"/>
                                     <h:outputText value="Frontal" style="color: black; font-family: cursive"/>
                                     <h:form enctype="multipart/form-data">
                                         <p:growl id="messages" showDetail="true" />
                                         <p:fileUpload value="#{subirimagenMB.file}" mode="simple" skinSimple="true"/>
-                                        </h:form>
+                                    </h:form>
                                     <h:outputText value="Corte" style="color: black; font-family: cursive"/>
                                     <h:form enctype="multipart/form-data">
                                         <p:growl id="messages" showDetail="true" />
                                         <p:fileUpload value="#{subirimagenMB.file}" mode="simple" skinSimple="true"/>
-                                        </h:form>
+                                    </h:form>
                                     <h:outputText value="Lateral" style="color: black; font-family: cursive"/>
                                     <h:form enctype="multipart/form-data">
                                         <p:growl id="messages" showDetail="true" />
                                         <p:fileUpload value="#{subirimagenMB.file}" mode="simple" skinSimple="true"/>
-                                        </h:form>
+                                    </h:form>
                                     <h:outputText value="Senital" style="color: black; font-family: cursive"/>
                                     <h:form enctype="multipart/form-data">
                                         <p:growl id="messages" showDetail="true" />
                                         <p:fileUpload value="#{subirimagenMB.file}" mode="simple" skinSimple="true"/>
-                                        </h:form>
+                                    </h:form>
                                     <h:outputText value="Altura *" style="color: black; font-family: cursive "/>
                                     <h:inputText value="" style="color: black; font-family: cursive "/>
                                     <h:outputText value="Ancho *" style="color: black; font-family: cursive "/>
