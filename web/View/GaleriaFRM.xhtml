@@ -18,7 +18,7 @@
                 <ui:insert name="content"></ui:insert>
                 <div id="galeria">
 
-                    <h:form>
+                    <h:form id="f1">
 
 
                         <p:outputPanel id="restrictPanel" layout="block" style="width:500px;height:100%;border:4px solid #666666;margin-bottom:220px; align-content: center;">
@@ -26,7 +26,7 @@
                                 <h:panelGrid columns="2">
 
                                     <h:outputText value="Nombre *" style="color: black; font-family: cursive "/>
-                                    <h:inputText value="#{analisisManagedBean.analisisnuevo.nombre_Tipo}"/>
+                                    <h:inputText id="Nombre" value="#{analisisManagedBean.analisisnuevo.nombre_Tipo}"/>
 
                                     <h:outputText value="Familia *" style="color: black; font-family: cursive "/>
 
@@ -50,8 +50,8 @@
                                                        itemLabel="#{seg.nombre_Segm} "/>
                                        <p:ajax event="change" listener="#{segmentoManagedBean.cargarSegmento()}"/> 
                                     </p:selectOneMenu>
-                                    <h:outputText value="Código*" style="color: black; font-family: cursive"/>
-                                    <h:inputText value=""/>
+                                    <h:outputText  value="Código*"  style="color: black; font-family: cursive"/>
+                                    <h:inputText   id="f2"/>
                                     <h:outputText value="Número de ficha *" style="color: black; font-family: cursive"/>
                                     <h:inputText value=""/>
                                     <h:outputText value="Ubicación" style="color: black; font-family: cursive; text-align: left "/>
@@ -121,7 +121,9 @@
                                     <h:inputText value="" style="color: black; font-family: cursive "/>
                                     <h:outputText value="Rango *" style="color: black; font-family: cursive "/>
                                     <h:inputText value="" style="color: black; font-family: cursive "/>
-
+                                    <script>
+                                        document.f1.f2.value = 30
+                                    </script>
 
 
                                 </h:panelGrid>
