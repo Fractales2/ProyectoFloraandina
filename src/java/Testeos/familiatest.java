@@ -7,9 +7,11 @@ package Testeos;
 
 import accesodatos.Familia;
 import accesodatos.Reservas;
+import accesodatos.Segmento;
 import java.util.ArrayList;
 import logica.familaLN;
 import logica.reservaLN;
+import logica.segmentoLN;
 
 /**
  *
@@ -37,7 +39,14 @@ public class familiatest {
             System.out.println(s.getNombre_Res());
             System.out.println();
         }
-        
+         System.out.println("---Listado de familias---");
+        ArrayList<Segmento> list1 = new ArrayList<>();
+        list1 = segmentoLN.obtenerSegmento();
+        for (Segmento s1 : list1) {
+            //System.out.println(s.getId_Familia());
+            System.out.println(s1.getNombre_Segm());
+            System.out.println();
+        }
         
     }
      

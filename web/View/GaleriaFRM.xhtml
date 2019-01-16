@@ -26,44 +26,44 @@
                                 <h:panelGrid columns="2">
 
                                     <h:outputText value="Nombre *" style="color: black; font-family: cursive "/>
-                                    <h:inputText value="#{familiaManagedBean.familianuevo.id_Familia}"/>
+                                    <h:inputText value="#{analisisManagedBean.analisisnuevo.nombre_Tipo}"/>
 
                                     <h:outputText value="Familia *" style="color: black; font-family: cursive "/>
 
-                                    <p:selectOneMenu id="listafamilia1"  value="#{familiaManagedBean.nombreFamilia}" filter="true">
+                                    <p:selectOneMenu id="listafamilia1"  value="" filter="true">
                                         <f:selectItem itemLabel="Elija una opción" itemValue="#{familiaManagedBean.listafamilia}"/>
                                         <f:selectItems value="#{familiaManagedBean.listafamilia}" var="fam" itemValue="#{fam.nombre_Familia}"
                                                        itemLabel="#{fam.nombre_Familia} "/>
-                                       <!-- <p:ajax event="change" listener="#{familiaManagedBean.cargarFmilia()}"/>--> 
+                                       <p:ajax event="change" listener="#{familiaManagedBean.cargarFmilia()}"/>
                                     </p:selectOneMenu>
                                     <h:outputText value="Reserva *" style="color: black; font-family: cursive "/>
-                                    <p:selectOneMenu id="listareserva"  value="#{familiaManagedBean.nombreFamilia}" filter="true">
-                                        <f:selectItem itemLabel="Elija una opción" itemValue="#{familiaManagedBean.listafamilia}"/>
-                                        <f:selectItems value="#{familiaManagedBean.listafamilia}" var="fam" itemValue="#{fam.nombre_Familia}"
-                                                       itemLabel="#{fam.nombre_Familia} "/>
-                                       <!-- <p:ajax event="change" listener="#{familiaManagedBean.cargarFmilia()}"/>--> 
+                                    <p:selectOneMenu id="listareserva"  value="#{reservaManagedBean.nombre_Res}" filter="true">
+                                        <f:selectItem itemLabel="Elija una opción" itemValue="#{reservaManagedBean.listareservas}"/>
+                                        <f:selectItems value="#{reservaManagedBean.listareservas}" var="res" itemValue="#{res.nombre_Res}"
+                                                       itemLabel="#{res.nombre_Res} "/>
+                                       <p:ajax event="change" listener="#{reservaManagedBean.cargarReserva()}"/>
                                     </p:selectOneMenu>
                                     <h:outputText value="Segmento analisado *" style="color: black; font-family: cursive "/>
-                                    <p:selectOneMenu id="listasegmento"  value="#{familiaManagedBean.nombreFamilia}" filter="true">
-                                        <f:selectItem itemLabel="Elija una opción" itemValue="#{familiaManagedBean.listafamilia}"/>
-                                        <f:selectItems value="#{familiaManagedBean.listafamilia}" var="fam" itemValue="#{fam.nombre_Familia}"
-                                                       itemLabel="#{fam.nombre_Familia} "/>
-                                       <!-- <p:ajax event="change" listener="#{familiaManagedBean.cargarFmilia()}"/>--> 
+                                    <p:selectOneMenu id="listasegmento"  value="#{segmentoManagedBean.nombreSegmento}" filter="true">
+                                        <f:selectItem itemLabel="Elija una opción" itemValue="#{segmentoManagedBean.listasegmento}"/>
+                                        <f:selectItems value="#{segmentoManagedBean.listasegmento}" var="seg" itemValue="#{seg.nombre_Segm}"
+                                                       itemLabel="#{seg.nombre_Segm} "/>
+                                       <p:ajax event="change" listener="#{segmentoManagedBean.cargarSegmento()}"/> 
                                     </p:selectOneMenu>
                                     <h:outputText value="Código*" style="color: black; font-family: cursive"/>
-                                    <h:inputText value="#{familiaManagedBean.familianuevo.id_Familia}"/>
+                                    <h:inputText value=""/>
                                     <h:outputText value="Número de ficha *" style="color: black; font-family: cursive"/>
-                                    <h:inputText value="#{familiaManagedBean.familianuevo.id_Familia}"/>
+                                    <h:inputText value=""/>
                                     <h:outputText value="Ubicación" style="color: black; font-family: cursive; text-align: left "/>
                                     <br><h:outputText value="Ingrese las coordenadas:" style="color: black; font-family: cursive" /></br>
                                     <h:outputText value="Eje X *" style="color: black; font-family: cursive" />
-                                    <h:inputText value="#{familiaManagedBean.familianuevo.nombre_Familia}"/>
+                                    <h:inputText value=""/>
                                     <h:outputText value="Eje Y *" style="color: black; font-family: cursive"/>
-                                    <h:inputText value="#{familiaManagedBean.familianuevo.id_Familia}"/>
+                                    <h:inputText value=""/>
                                     <h:outputText value="Fecha de recolección *" style="color: black; font-family: cursive"/>
-                                    <h:inputText value="#{familiaManagedBean.familianuevo.nombre_Familia}"/>
+                                    <h:inputText value=""/>
                                     <h:outputText value="Nombre del investigador *" style="color: black; font-family: cursive"/>
-                                    <h:inputText value="#{familiaManagedBean.familianuevo.nombre_Familia}"/>
+                                    <h:inputText value=""/>
                                     <h:outputText value="Subir Imagenes" style="color: black; font-family: cursive"/>
                                     <h:outputText value="" style="color: black; font-family: cursive"/>
                                     <h:outputText value="Galeria General" style="color: black; font-family: cursive"/>
@@ -125,7 +125,7 @@
 
 
                                 </h:panelGrid>
-                                <h:commandButton value="Ingresar" action="#{familiaManagedBean.ingresarFamilia()}" style="color: black; font-family: cursive"/>
+                               <!-- <h:commandButton value="Ingresar" action="#{familiaManagedBean.ingresarFamilia()}" style="color: black; font-family: cursive"/>-->
                             </p:panel>
                         </p:outputPanel>
                     </h:form>

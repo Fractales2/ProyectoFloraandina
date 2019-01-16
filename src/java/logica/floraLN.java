@@ -23,17 +23,20 @@ public class floraLN {
         ArrayList<Parametro> lstpar = new ArrayList<>();
         lstpar.add(new Parametro(1,flora.getId_Flora()));
         lstpar.add(new Parametro(2,flora.getId_User()));
-        lstpar.add(new Parametro(3,flora.getId_Imagen()));
-        lstpar.add(new Parametro(4,flora.getId_Familia()));
-        lstpar.add(new Parametro(5,flora.getNombre_Flora()));
-        lstpar.add(new Parametro(6,flora.getUbicacionX()));
-        lstpar.add(new Parametro(7,flora.getUbicacionY()));
-        lstpar.add(new Parametro(8,flora.getRecoleccion()));
-        lstpar.add(new Parametro(9,flora.getCod_Herbario()));
-        lstpar.add(new Parametro(10,flora.getNombre_Investigador()));
+        lstpar.add(new Parametro(3,flora.getId_Familia()));
+        lstpar.add(new Parametro(4,flora.getNombre_Flora()));
+        lstpar.add(new Parametro(5,flora.getUbicacionX()));
+        lstpar.add(new Parametro(6,flora.getUbicacionY()));
+        lstpar.add(new Parametro(7,flora.getCod_Herbario()));
+        lstpar.add(new Parametro(8,flora.getNombre_Investigador()));
+        lstpar.add(new Parametro(9,flora.getRecoleccion()));
+        lstpar.add(new Parametro(10,flora.getId_Segmento1()));
+        lstpar.add(new Parametro(11,flora.getFicha()));
+       
+        
         String sql = "INSERT INTO public.\"FLORA\"(\n" +
-"	\"Id_Flora\", \"Id_User\", \"Id_Imagen\", \"Id_Familia\", \"Nombre_Flora\", \"UbicacionX\", \"UbicacionY\", \"Recoleccion\", \"Cod_Herbario\", \"Nombre_Investigador\")\n" +
-"	VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";            
+"	\"Id_Flora\", \"Id_User\", \"Id_Familia\", \"Nombre_Flora\", \"UbicacionX\", \"UbicacionY\", \"Cod_Herbario\", \"Nombre_Investigador\", \"Recoleccion\", \"Id_Segmento1\", \"Ficha\")\n" +
+"	VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";            
 //"	VALUES ('" + familia.getId_Familia() + "','" + familia.getNombre_Familia() + "');";
         try {
             resp = AccesoDatos.ejecutaComando1(sql, lstpar);

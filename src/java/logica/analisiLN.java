@@ -22,7 +22,7 @@ public class analisiLN {
         boolean resp = false;
         ArrayList<Parametro> lstpar = new ArrayList<>();
         lstpar.add(new Parametro(1,analisis.getId_Segmento()));
-        lstpar.add(new Parametro(2,analisis.getId_Flora()));
+   //     lstpar.add(new Parametro(2,analisis.getId_Flora()));
         lstpar.add(new Parametro(3,analisis.getNombre_Tipo()));
         lstpar.add(new Parametro(4,analisis.getDimension_Altura()));
         lstpar.add(new Parametro(5,analisis.getDimension_Ancho()));

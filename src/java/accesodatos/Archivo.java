@@ -15,6 +15,9 @@ public class Archivo {
     private String Archivo;
     private String Formula;
 
+     public Archivo() {
+        
+    }
     public Archivo(String Id_Archivo, String Id_Flora, String Archivo, String Formula) {
         this.Id_Archivo = Id_Archivo;
         this.Id_Flora = Id_Flora;
@@ -22,9 +25,7 @@ public class Archivo {
         this.Formula = Formula;
     }
 
-    public Archivo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
 
     public String getId_Archivo() {
         return Id_Archivo;

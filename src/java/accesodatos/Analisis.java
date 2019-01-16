@@ -20,6 +20,10 @@ public class Analisis {
     private Double Dimension_Razon;
     private Double Dimension_Rango;
     private Text Descripcion;
+    
+     public Analisis() {
+    
+    }
 
     public Analisis(String Id_Segmento, String Id_Flora, String Nombre_Tipo, Double Dimension_Altura, Double Dimension_Ancho, Double Dimension_Razon, Double Dimension_Rango, Text Descripcion) {
         this.Id_Segmento = Id_Segmento;
@@ -32,9 +36,7 @@ public class Analisis {
         this.Descripcion = Descripcion;
     }
 
-    public Analisis() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
 
     public String getId_Segmento() {
         return Id_Segmento;
@@ -44,7 +46,7 @@ public class Analisis {
         this.Id_Segmento = Id_Segmento;
     }
 
-    public String getId_Flora() {
+   public String getId_Flora() {
         return Id_Flora;
     }
 

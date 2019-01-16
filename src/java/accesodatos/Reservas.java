@@ -13,12 +13,13 @@ public class Reservas {
     private Integer Id_Reservas;
     private String Nombre_Res;
 
+    public Reservas (){
+    }
     public Reservas (Integer Id_Reservas, String Nombre_Familia){
         this.Id_Reservas = Id_Reservas;
         this.Nombre_Res = Nombre_Familia;
     }
-    public Reservas (){
-    }
+    
     public Integer getId_Reservas() {
         return Id_Reservas;
     }

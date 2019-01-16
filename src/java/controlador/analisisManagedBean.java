@@ -30,7 +30,7 @@ public class analisisManagedBean implements Serializable {
     private Analisis analisissel;
     
     public analisisManagedBean() {
-    analisisnuevo =new Analisis();
+    analisisnuevo = new Analisis();
     }
 
     public ArrayList<Analisis> getListaanalisis() {

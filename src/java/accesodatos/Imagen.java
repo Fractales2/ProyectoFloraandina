@@ -17,6 +17,9 @@ public class Imagen {
     private Byte Imagen_Lateral;
     private Byte Imagen_Senital;
 
+     public Imagen() {
+    
+    }
     public Imagen(String Id_Imagen, Byte Imagen_Frontal, Byte Imagen_Corte, Byte Imagen_Lateral, Byte Imagen_Senital) {
         this.Id_Imagen = Id_Imagen;
         this.Imagen_Frontal = Imagen_Frontal;
@@ -25,9 +28,7 @@ public class Imagen {
         this.Imagen_Senital = Imagen_Senital;
     }
 
-    public Imagen() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
 
     public String getId_Imagen() {
         return Id_Imagen;
