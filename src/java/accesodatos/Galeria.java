@@ -14,15 +14,16 @@ public class Galeria {
     private String Tipo_Galeria;
     private Integer Id_Flora;
 
+     public Galeria() {
+        
+    }
     public Galeria(Integer Id_Galeria, String Tipo_Galeria, Integer Id_Flora) {
         this.Id_Galeria = Id_Galeria;
         this.Tipo_Galeria = Tipo_Galeria;
         this.Id_Flora = Id_Flora;
     }
 
-    public Galeria() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
 
     public Integer getId_Galeria() {
         return Id_Galeria;

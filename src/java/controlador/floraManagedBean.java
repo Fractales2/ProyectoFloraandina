@@ -12,7 +12,10 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+import javax.faces.view.ViewScoped;
 import logica.floraLN;
+import controlador.familiaManagedBean;
+import javax.inject.Named;
 
 /**
  *
@@ -20,6 +23,9 @@ import logica.floraLN;
  */
 @Named(value = "floraManagedBean")
 @SessionScoped
+
+
+
 public class floraManagedBean implements Serializable {
 
     /**
@@ -31,6 +37,7 @@ public class floraManagedBean implements Serializable {
     
     public floraManagedBean() {
         floranuevo = new Flora();
+      
     }
 
     public ArrayList<Flora> getListafamilia() {

@@ -12,21 +12,25 @@ import java.sql.Date;
  * @author ASUS
  */
 public class Flora {
-    private String Id_Flora;
-    private String Id_User;
-    private String Id_Imagen;
-    private String Id_Familia;
+    private Integer Id_Flora;
+    private Integer Id_User;
+    private Integer Id_Familia;
     private String Nombre_Flora;
     private Double UbicacionX;
     private Double UbicacionY;
     private Date   Recoleccion;
     private String Cod_Herbario;
+    private String Ficha;
     private String Nombre_Investigador;
+    private Integer Id_Segmento1;
+    
+     public Flora() {
+     
+    }
 
-    public Flora(String Id_Flora, String Id_User, String Id_Imagen, String Id_Familia, String Nombre_Flora, Double UbicacionX, Double UbicacionY, Date Recoleccion, String Cod_Herbario, String Nombre_Investigador) {
+    public Flora(Integer Id_Flora, Integer Id_User, Integer Id_Familia, String Nombre_Flora, Double UbicacionX, Double UbicacionY, Date Recoleccion, String Cod_Herbario, String Nombre_Investigador, String Ficha, Integer Id_Segmento1) {
         this.Id_Flora = Id_Flora;
         this.Id_User = Id_User;
-        this.Id_Imagen = Id_Imagen;
         this.Id_Familia = Id_Familia;
         this.Nombre_Flora = Nombre_Flora;
         this.UbicacionX = UbicacionX;
@@ -34,16 +38,52 @@ public class Flora {
         this.Recoleccion = Recoleccion;
         this.Cod_Herbario = Cod_Herbario;
         this.Nombre_Investigador = Nombre_Investigador;
+        this.Ficha = Ficha;
+        this.Id_Segmento1 = Id_Segmento1;
     }
 
-    public Flora() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
+   
 
-    public String getId_Flora() {
+    public Integer getId_Flora() {
         return Id_Flora;
     }
+
+    public void setId_Flora(Integer Id_Flora) {
+        this.Id_Flora = Id_Flora;
+    }
+
+    public Integer getId_User() {
+        return Id_User;
+    }
+
+    public void setId_User(Integer Id_User) {
+        this.Id_User = Id_User;
+    }
+
+    public Integer getId_Familia() {
+        return Id_Familia;
+    }
+
+    public void setId_Familia(Integer Id_Familia) {
+        this.Id_Familia = Id_Familia;
+    }
+
+    public Integer getId_Segmento1() {
+        return Id_Segmento1;
+    }
+
+    public void setId_Segmento1(Integer Id_Segmento1) {
+        this.Id_Segmento1 = Id_Segmento1;
+    }
+
+    public String getFicha() {
+        return Ficha;
+    }
+
+    public void setFicha(String Ficha) {
+        this.Ficha = Ficha;
+    }
+    
 
     public Date getRecoleccion() {
         return Recoleccion;
@@ -51,34 +91,6 @@ public class Flora {
 
     public void setRecoleccion(Date Recoleccion) {
         this.Recoleccion = Recoleccion;
-    }
-
-    public void setId_Flora(String Id_Flora) {
-        this.Id_Flora = Id_Flora;
-    }
-
-    public String getId_User() {
-        return Id_User;
-    }
-
-    public void setId_User(String Id_User) {
-        this.Id_User = Id_User;
-    }
-
-    public String getId_Imagen() {
-        return Id_Imagen;
-    }
-
-    public void setId_Imagen(String Id_Imagen) {
-        this.Id_Imagen = Id_Imagen;
-    }
-
-    public String getId_Familia() {
-        return Id_Familia;
-    }
-
-    public void setId_Familia(String Id_Familia) {
-        this.Id_Familia = Id_Familia;
     }
 
     public String getNombre_Flora() {

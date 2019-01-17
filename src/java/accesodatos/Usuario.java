@@ -17,6 +17,10 @@ public class Usuario {
     private String Correo_User;
     private String Tipo_User;
     private String Estado_User;
+    
+    public Usuario() {
+     
+    }
 
     public Usuario(String Id_User, String Contrasena_User, String Cedula_User, String Nombre_User, String Correo_User, String Tipo_User, String Estado_User) {
         this.Id_User = Id_User;
@@ -28,9 +32,7 @@ public class Usuario {
         this.Estado_User = Estado_User;
     }
 
-    public Usuario() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
     public String getId_User() {
         return Id_User;
