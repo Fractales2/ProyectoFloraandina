@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition template="./../Templates/IndexPF.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <link href="#{facesContext.externalContext.requestContextPath}/resources/css/default.css" rel="stylesheet" type="text/css" /> 
+    <link href="#{facesContext.externalContext.requestContextPath}/resources/css/cssLayout.css" rel="stylesheet" type="text/css" /> 
+    
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />        
+        <title>Quienes Somos</title>
+    </h:head>    
+    
+    <ui:define name="content">
+        <div id="content" class="">
+            <h:form>
+                <ui:insert name="content"></ui:insert>
+                
+                    <h:form>                                                
+                        <center>
+                            <p:outputPanel style="align-items:left; width:625px;height:200%;border:4px #666666;margin-bottom:2px;">
+                                <p:panel  header="QUIENES SOMOS:" style="color: black; font-family: cursive">
+                                    <h:outputText value="Somos un grupo de Investigación Científica que estudia la flora nativa existente en la provincia de Chimborazo, con el fin de conseguir el desarrollo humano y social promoviendo el arte, cultura y patrimonio."/>
+                                    <h:panelGrid columns="2">
+                                        <p:outputLabel value="Director del Proyecto:"/><h:outputText value="Arq. Ximena Idrobo"/>
+                                        <p:outputLabel value="Investigadores:"/>
+                                        <p:outputLabel value=""/>
+                                        <p:outputLabel value=""/>
+                                        <p:outputLabel value="Lcda. Ana Lucía Abarca Rivera"/>
+                                        <p:outputLabel value=""/>
+                                        <p:outputLabel value="Lcdo. Héctor Oswaldo Cajas Aguilar"/>
+                                        <p:outputLabel value=""/>
+                                        <p:outputLabel value="Dr. Alonso Washington Álvarez Olivo"/>
+                                        <p:outputLabel value=""/>
+                                        <p:outputLabel value="Ing. Paúl Xavier Paguay Soxo"/>
+                                        <p:outputLabel value=""/>
+                                        <p:outputLabel value="Ing. Jorge Marcelo Caranqui Aldaz"/>                                    
+                                        <p:outputLabel value="Desarrolladores:"/>
+                                        <p:outputLabel value=""/>
+                                        <p:outputLabel value=""/>
+                                        <p:outputLabel value="Stalin Piñas"/>
+                                        <p:outputLabel value=""/>
+                                        <p:outputLabel value="Jenniffer Calahorrano"/>                                    
+                                        <p:outputLabel value=""/>
+                                        <p:outputLabel value="Alex Vinueza"/>
+                                        <p:outputLabel value=""/>
+                                        <p:outputLabel value="Erick Cruz"/>
+                                        <p:outputLabel value=""/>
+                                        <p:outputLabel value="Doménica Falconí"/>
+                                    </h:panelGrid>
+                                </p:panel>
+                                <p:panel  header="UBICACIÓN GEOGRÁFICA:" style="color: black; font-family: cursive">                                    
+                                    <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7976.310653376281!2d-78.68338043452643!3d-1.6543273595633574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d307c252930ed9%3A0x6ad1a526f47e5b0c!2sEscuela+Superior+Polit%C3%A9cnica+de+Chimborazo!5e0!3m2!1ses!2sec!4v1547705140953" width="600" height="450" frameborder="0" style="border:0"></iframe>
+                                </p:panel>                                                                
+                            </p:outputPanel>                                                
+                        </center>
+                        
+                    </h:form>                
+            </h:form>
+        </div>
+    </ui:define>
+</ui:composition>
