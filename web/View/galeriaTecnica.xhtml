@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./../Templates/IndexPF.xhtml">
+
+            <ui:define name="content">
+                <h:outputText value="GALERIA DE CORTE" style="color: white; font-family: cursive " />
+                <p:contentFlow value="#{contentFlow.images}" var="image">
+                    <p:graphicImage url="../galeriat/corte/#{image}"   styleClass="content" />
+                    <div class="caption">#{image}</div>
+                </p:contentFlow>
+                <h:outputText value="GALERIA FRONTAL" style="color: white; font-family: cursive "/>
+                <p:contentFlow value="#{contentFlow.images}" var="image">
+                    <p:graphicImage url="../galeriat/frontal/#{image}"   styleClass="content" />
+                    <div class="caption">#{image}</div>
+                </p:contentFlow>
+                <h:outputText value="GALERIA LATERAL" style="color: white; font-family: cursive "/>
+                <p:contentFlow value="#{contentFlow.images}" var="image">
+                    <p:graphicImage url="../galeriat/lateral/#{image}"   styleClass="content" />
+                    <div class="caption">#{image}</div>
+                </p:contentFlow>
+                <h:outputText value="GALERIA SENITAL" style="color: white; font-family: cursive "/>
+                <p:contentFlow value="#{contentFlow.images}" var="image">
+                    <p:graphicImage url="../galeriat/senital/#{image}"   styleClass="content" />
+                    <div class="caption">#{image}</div>
+                </p:contentFlow>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

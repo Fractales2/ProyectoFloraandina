@@ -22,13 +22,12 @@ public class imagenLN {
          boolean resp = false;
         ArrayList<Parametro> lstpar = new ArrayList<>();
          lstpar.add(new Parametro(1, imagen.getId_Imagen()));
-        lstpar.add(new Parametro(2, imagen.getImagen_Frontal()));
-        lstpar.add(new Parametro(3, imagen.getImagen_Corte()));
-        lstpar.add(new Parametro(4, imagen.getImagen_Lateral()));
-        lstpar.add(new Parametro(5, imagen.getImagen_Senital()));
-        String sql = "INSERT INTO public.\"IMAGEN\"(\n" +
-"	\"Id_Imagen\", \"Imagen_Frontal\", \"Imagen_Corte\", \"Imagen_Lateral\", \"Imagen_Senital\")\n" +
-"	VALUES (?, ?, ?, ?, ?);";            
+        lstpar.add(new Parametro(2, imagen.getTipo_Imagen()));
+        lstpar.add(new Parametro(3, imagen.getId_Galeria()));
+        lstpar.add(new Parametro(4, imagen.getImagen()));
+        String sql = "IINSERT INTO public.\"IMAGEN\"(\n" +
+"	\"Id_Imagen\", \"Tipo_Imagen\", \"Id_Galeria\", \"Imagen\")\n" +
+"	VALUES (?, ?, ?, ?);";            
         try {
             resp = AccesoDatos.ejecutaComando1(sql, lstpar);
         } catch (Exception ex) {

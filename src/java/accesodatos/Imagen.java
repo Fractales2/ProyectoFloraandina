@@ -5,70 +5,76 @@
  */
 package accesodatos;
 
+import javax.persistence.Lob;
+
 /**
  *
  * @author ASUS
  */
 public class Imagen {
   
-    private String Id_Imagen;
-    private Byte Imagen_Frontal;
-    private Byte Imagen_Corte;
-    private Byte Imagen_Lateral;
-    private Byte Imagen_Senital;
+    private Integer Id_Imagen;
+    @Lob()
+    private byte[] Imagen;
+    private String Tipo_Imagen; 
+    private Integer Id_Galeria;
+    private String enunciado;
 
+    public String getEnunciado() {
+        return enunciado;
+    }
+
+    public void setEnunciado(String enunciado) {
+        this.enunciado = enunciado;
+    }
+    
+    
+      
+ 
      public Imagen() {
     
     }
-    public Imagen(String Id_Imagen, Byte Imagen_Frontal, Byte Imagen_Corte, Byte Imagen_Lateral, Byte Imagen_Senital) {
+
+    public Imagen(Integer Id_Imagen, byte[] Imagen, String Tipo_Imagen, Integer Id_Galeria) {
         this.Id_Imagen = Id_Imagen;
-        this.Imagen_Frontal = Imagen_Frontal;
-        this.Imagen_Corte = Imagen_Corte;
-        this.Imagen_Lateral = Imagen_Lateral;
-        this.Imagen_Senital = Imagen_Senital;
+        this.Imagen = Imagen;
+        this.Tipo_Imagen = Tipo_Imagen;
+        this.Id_Galeria = Id_Galeria;
     }
 
-   
-
-    public String getId_Imagen() {
+    public Integer getId_Imagen() {
         return Id_Imagen;
     }
 
-    public void setId_Imagen(String Id_Imagen) {
+    public void setId_Imagen(Integer Id_Imagen) {
         this.Id_Imagen = Id_Imagen;
     }
 
-    public Byte getImagen_Frontal() {
-        return Imagen_Frontal;
+    public byte[] getImagen() {
+        return Imagen;
     }
 
-    public void setImagen_Frontal(Byte Imagen_Frontal) {
-        this.Imagen_Frontal = Imagen_Frontal;
+    public void setImagen(byte[] Imagen) {
+        this.Imagen = Imagen;
     }
 
-    public Byte getImagen_Corte() {
-        return Imagen_Corte;
+    public String getTipo_Imagen() {
+        return Tipo_Imagen;
     }
 
-    public void setImagen_Corte(Byte Imagen_Corte) {
-        this.Imagen_Corte = Imagen_Corte;
+    public void setTipo_Imagen(String Tipo_Imagen) {
+        this.Tipo_Imagen = Tipo_Imagen;
     }
 
-    public Byte getImagen_Lateral() {
-        return Imagen_Lateral;
+    public Integer getId_Galeria() {
+        return Id_Galeria;
     }
 
-    public void setImagen_Lateral(Byte Imagen_Lateral) {
-        this.Imagen_Lateral = Imagen_Lateral;
+    public void setId_Galeria(Integer Id_Galeria) {
+        this.Id_Galeria = Id_Galeria;
     }
-
-    public Byte getImagen_Senital() {
-        return Imagen_Senital;
-    }
-
-    public void setImagen_Senital(Byte Imagen_Senital) {
-        this.Imagen_Senital = Imagen_Senital;
-    }
+     
+      
     
     
 }
