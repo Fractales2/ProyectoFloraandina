@@ -27,7 +27,7 @@ public class segmentoLN {
      while(resultado.next()){
      segm = new Segmento();
      //fami.setId_Familia(resultado.getString(0));
-     segm.setNombre_Segm(resultado.getString(1));
+     segm.setNombre_Segm(resultado.getString(2));
      listaSegmento.add(segm);
      }
      }catch (Exception ex){
