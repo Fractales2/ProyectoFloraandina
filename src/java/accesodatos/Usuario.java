@@ -10,7 +10,7 @@ package accesodatos;
  * @author ASUS
  */
 public class Usuario {
-    private String Id_User;
+    private Integer Id_User;
     private String Contrasena_User;
     private String Cedula_User;
     private String Nombre_User;
@@ -22,7 +22,7 @@ public class Usuario {
      
     }
 
-    public Usuario(String Id_User, String Contrasena_User, String Cedula_User, String Nombre_User, String Correo_User, String Tipo_User, String Estado_User) {
+    public Usuario(Integer Id_User, String Contrasena_User, String Cedula_User, String Nombre_User, String Correo_User, String Tipo_User, String Estado_User) {
         this.Id_User = Id_User;
         this.Contrasena_User = Contrasena_User;
         this.Cedula_User = Cedula_User;
@@ -34,11 +34,11 @@ public class Usuario {
 
     
 
-    public String getId_User() {
+    public Integer getId_User() {
         return Id_User;
     }
 
-    public void setId_User(String Id_User) {
+    public void setId_User(Integer Id_User) {
         this.Id_User = Id_User;
     }
 

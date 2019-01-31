@@ -28,6 +28,7 @@ public class usuarioManagedBean implements Serializable {
     private ArrayList<Usuario> listausuario;
     private Usuario usuarionuevo;
     private Usuario usuariosel;
+
     public usuarioManagedBean() {
         usuarionuevo = new Usuario();
     }
@@ -55,16 +56,32 @@ public class usuarioManagedBean implements Serializable {
     public void setUsuariosel(Usuario usuariosel) {
         this.usuariosel = usuariosel;
     }
-     public void ingresarUsuario() {
+
+    public void ingresarUsuario() {
         try {
             if (usuarioLN.insertarUsuario(usuarionuevo)) {
                 FacesMessage facesMsg = new FacesMessage(FacesMessage.SEVERITY_INFO,
                         "Ingreso correcto ", "Los datos se guadaron correctamente");
                 FacesContext.getCurrentInstance().addMessage("successInfo", facesMsg);
-               }
+            }
         } catch (Exception ex) {
             System.out.println("Error: " + ex.getMessage());
         }
     }
-    
+
+    public void iniciarSesion() {
+
+        try {
+            
+             ArrayList<Usuario> listaUsuario = new ArrayList<>();
+             
+            listaUsuario=usuarioLN.obtenerUsuario(usuarionuevo);
+            FacesMessage facesMsg = new FacesMessage(FacesMessage.SEVERITY_INFO,
+                    "Logueo Correcto ", "El logeo se realizó correctamente");
+            FacesContext.getCurrentInstance().addMessage("successInfo", facesMsg);
+
+        } catch (Exception ex) {
+            System.out.println("Error: " + ex.getMessage());
+        }
+    }
 }

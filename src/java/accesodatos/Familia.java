@@ -10,24 +10,24 @@ package accesodatos;
  * @author ASUS
  */
 public class Familia {
-    private String Id_Familia;
+    private Integer Id_Familia;
     private String Nombre_Familia;
 
     public Familia() {
       
     }
-    public Familia(String Id_Familia, String Nombre_Familia) {
+    public Familia(Integer Id_Familia, String Nombre_Familia) {
         this.Id_Familia = Id_Familia;
         this.Nombre_Familia = Nombre_Familia;
     }
 
     
 
-    public String getId_Familia() {
+    public Integer getId_Familia() {
         return Id_Familia;
     }
 
-    public void setId_Familia(String Id_Familia) {
+    public void setId_Familia(Integer Id_Familia) {
         this.Id_Familia = Id_Familia;
     }
 

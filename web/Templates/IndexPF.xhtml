@@ -23,7 +23,7 @@
             <div id="menu">
                 <h:form>  
                     <p:growl id="messages"/>
- 
+
                     <p:menubar>
                         <p:menuitem value="Inicio" outcome="/View/PantallaPrincipal?faces-redirect=true" />
 
@@ -36,7 +36,7 @@
                         </p:submenu>
 
                         <p:submenu label="Ingresar" icon="pi pi-file">
-                            <p:menuitem value="Usuario" url="#" />
+                            <p:menuitem value="Usuario" outcome="/View/usuarioFRM?faces-redirect=true" />
                             <p:separator />
                             <p:menuitem value="Flora" outcome="/View/GaleriaFRM?faces-redirect=true" />
                         </p:submenu>
@@ -46,6 +46,22 @@
 
 
                     </p:menubar>
+                    <h:form>
+
+                        <p:panel style="color: black; font-family: cursive">
+                            <p:messages autoUpdate="true" />
+                            <h:panelGrid columns="2">
+                                <h:outputText value="Cédula *" style="color: black; font-family: cursive "/>
+                                <h:inputText id="cedulaAutent" value="#{usuarioManagedBean.usuarionuevo.nombre_User}"/>
+                                <h:outputText value="Contraseña *" style="color: black; font-family: cursive "/>
+                                <h:inputSecret id="contrasenaAutent" value="#{usuarioManagedBean.usuarionuevo.contrasena_User}"/>
+                                <h:column></h:column>
+                                <h:commandButton  value="Entrar" action="#{usuarioManagedBean.ingresarUsuario()}" style="color: black; font-family: cursive"/>
+
+                            </h:panelGrid>
+                        </p:panel>
+                    </h:form>
+
                 </h:form>
             </div>
         </div>
@@ -56,10 +72,10 @@
             <div id="content" class="center_content" >
                 <ui:insert name="content"></ui:insert>
                 <div id="fondo">
-                    
-                    <!--<img src="#{facesContext.externalContext.requestContextPath}/Imagenes/fondo2.jpg" width="100%"></img>-->
+
+<!--<img src="#{facesContext.externalContext.requestContextPath}/Imagenes/fondo2.jpg" width="100%"></img>-->
                 </div>
-                
+
             </div>
         </div>
         <div id="bottom">
@@ -68,34 +84,34 @@
                 <h:form>
                     <h2>"Dirección: Panamericana Sur km 1 1/2, Riobamba-Ecuador | Teléfono: 593(03) 2998-200 | Telefax: (03)2317-001 | Código Postal: EC060155"</h2>
                 </h:form>
-               <!-- <div id="menu">
-                <h:form>  
-                    <p:growl id="messages"/>
-
-                    <p:menubar>
-                        <p:menuitem value="Inicio" url="http://www.primefaces.org" />
-
-                        <p:submenu label="Galerias" icon="pi pi-file">
-                            <p:menuitem value="General" url="#" />
-                            <p:separator />
-                            <p:menuitem value="Tecnica" url="#" />
-                            <p:separator />
-                            <p:menuitem value="Practica" url="#" />
-                        </p:submenu>
-
-                        <p:submenu label="Ingresar" icon="pi pi-file">
-                            <p:menuitem value="Usuario" url="#" />
-                            <p:separator />
-                            <p:menuitem value="Planta" url="#" />
-                        </p:submenu>
-
-                        <p:menuitem value="Quienes Somos" url="http://www.primefaces.org" />
-                        <p:menuitem value="Contactos" url="http://www.primefaces.org" />
-
-
-                    </p:menubar>
-                </h:form>
-            </div>-->
+                <!-- <div id="menu">
+                 <h:form>  
+                     <p:growl id="messages"/>
+ 
+                     <p:menubar>
+                         <p:menuitem value="Inicio" url="http://www.primefaces.org" />
+ 
+                         <p:submenu label="Galerias" icon="pi pi-file">
+                             <p:menuitem value="General" url="#" />
+                             <p:separator />
+                             <p:menuitem value="Tecnica" url="#" />
+                             <p:separator />
+                             <p:menuitem value="Practica" url="#" />
+                         </p:submenu>
+ 
+                         <p:submenu label="Ingresar" icon="pi pi-file">
+                             <p:menuitem value="Usuario" url="#" />
+                             <p:separator />
+                             <p:menuitem value="Planta" url="#" />
+                         </p:submenu>
+ 
+                         <p:menuitem value="Quienes Somos" url="http://www.primefaces.org" />
+                         <p:menuitem value="Contactos" url="http://www.primefaces.org" />
+ 
+ 
+                     </p:menubar>
+                 </h:form>
+             </div>-->
             </div>
         </div>
 
