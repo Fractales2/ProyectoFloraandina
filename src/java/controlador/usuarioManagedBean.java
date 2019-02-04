@@ -11,6 +11,7 @@ import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import java.util.ArrayList;
 import javax.faces.application.FacesMessage;
+import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 import logica.usuarioLN;
 
@@ -18,27 +19,29 @@ import logica.usuarioLN;
  *
  * @author ASUS
  */
-@Named(value = "usuarioManagedBean")
+@ManagedBean
+//@Named(value = "usuarioManagedBean")
 @SessionScoped
 public class usuarioManagedBean implements Serializable {
 
     /**
      * Creates a new instance of usuarioManagedBean
      */
-    private ArrayList<Usuario> listausuario;
+    private ArrayList<Usuario> listaUsuario;
     private Usuario usuarionuevo;
     private Usuario usuariosel;
 
     public usuarioManagedBean() {
-        usuarionuevo = new Usuario();
+   
     }
 
-    public ArrayList<Usuario> getListausuario() {
-        return listausuario;
+    
+    public ArrayList<Usuario> getListaUsuario() {
+        return listaUsuario;
     }
 
-    public void setListausuario(ArrayList<Usuario> listausuario) {
-        this.listausuario = listausuario;
+    public void setListaUsuario(ArrayList<Usuario> listaUsuario) {
+        this.listaUsuario = listaUsuario;
     }
 
     public Usuario getUsuarionuevo() {
@@ -69,19 +72,5 @@ public class usuarioManagedBean implements Serializable {
         }
     }
 
-    public void iniciarSesion() {
-
-        try {
-            
-             ArrayList<Usuario> listaUsuario = new ArrayList<>();
-             
-            listaUsuario=usuarioLN.obtenerUsuario(usuarionuevo);
-            FacesMessage facesMsg = new FacesMessage(FacesMessage.SEVERITY_INFO,
-                    "Logueo Correcto ", "El logeo se realizó correctamente");
-            FacesContext.getCurrentInstance().addMessage("successInfo", facesMsg);
-
-        } catch (Exception ex) {
-            System.out.println("Error: " + ex.getMessage());
-        }
-    }
+    
 }

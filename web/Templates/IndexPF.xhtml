@@ -3,68 +3,41 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <link href="#{facesContext.externalContext.requestContextPath}/resources/css/default.css" rel="stylesheet" type="text/css" /> 
         <link href="#{facesContext.externalContext.requestContextPath}/resources/css/cssLayout.css" rel="stylesheet" type="text/css" /> 
         <title>Flora Andina</title>
+        <f:event type="preRenderView" listener="#{cVerificarSesion.verificarSesion()}" />
     </h:head>
 
     <h:body >
+
         <div id="top">
-            <ui:insert name="top"></ui:insert>
-            <div id="background">
-                <p:imageCompare leftImage="/Imagenes/paisaje1.jpg"
-                                rightImage="/Imagenes/paisaje2.jpg"
-                                width="100%" height="300"/> 
-            </div>
-            <div id="menu">
+            <ui:insert name="top">
+                <div id="background">
+                    <p:imageCompare leftImage="/Imagenes/paisaje1.jpg"
+                                    rightImage="/Imagenes/paisaje2.jpg"
+                                    width="100%" height="300"/> 
+                </div>
+
                 <h:form>  
                     <p:growl id="messages"/>
-
-                    <p:menubar>
-                        <p:menuitem value="Inicio" outcome="/View/PantallaPrincipal?faces-redirect=true" />
-
-                        <p:submenu label="Galerias" icon="pi pi-file">
-                            <p:menuitem value="General" outcome="/View/galeriaGeneral?faces-redirect=true" />
-                            <p:separator />
-                            <p:menuitem value="Tecnica" outcome="/View/galeriaTecnica?faces-redirect=true" />
-                            <p:separator />
-                            <p:menuitem value="Archivos" url="#" />
-                        </p:submenu>
-
-                        <p:submenu label="Ingresar" icon="pi pi-file">
-                            <p:menuitem value="Usuario" outcome="/View/usuarioFRM?faces-redirect=true" />
-                            <p:separator />
-                            <p:menuitem value="Flora" outcome="/View/GaleriaFRM?faces-redirect=true" />
-                        </p:submenu>
-
-                        <p:menuitem value="Quienes Somos" outcome="/View/QuienesSomos?faces-redirect=true"  />
-                        <p:menuitem value="Contactos" outcome="/View/Contacto?faces-redirect=true" />
-
-
+                    <p:menubar model="#{cMenu.model}">
+                        <f:facet name="options">
+                            <p:commandButton actionListener="#{cMenu.cerrarSesion()}" icon="ui-icon-power" action="/login?faces-redirect=true" title="Cerrar Sesión"/>
+                        </f:facet>
                     </p:menubar>
-                    <h:form>
-
-                        <p:panel style="color: black; font-family: cursive">
-                            <p:messages autoUpdate="true" />
-                            <h:panelGrid columns="2">
-                                <h:outputText value="Cédula *" style="color: black; font-family: cursive "/>
-                                <h:inputText id="cedulaAutent" value="#{usuarioManagedBean.usuarionuevo.nombre_User}"/>
-                                <h:outputText value="Contraseña *" style="color: black; font-family: cursive "/>
-                                <h:inputSecret id="contrasenaAutent" value="#{usuarioManagedBean.usuarionuevo.contrasena_User}"/>
-                                <h:column></h:column>
-                                <h:commandButton  value="Entrar" action="#{usuarioManagedBean.ingresarUsuario()}" style="color: black; font-family: cursive"/>
-
-                            </h:panelGrid>
-                        </p:panel>
-                    </h:form>
-
                 </h:form>
-            </div>
+
+            </ui:insert>
+
+
         </div>
+
         <div>
             <!--<div id="left">
                 <ui:insert name="left">Left</ui:insert>

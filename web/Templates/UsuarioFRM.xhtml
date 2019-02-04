@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="./../Templates/IndexPF.xhtml">
+
+
+        <link href="#{facesContext.externalContext.requestContextPath}/resources/css/default.css" rel="stylesheet" type="text/css" /> 
+        <link href="#{facesContext.externalContext.requestContextPath}/resources/css/cssLayout.css" rel="stylesheet" type="text/css" /> 
+
+        <ui:define name="content">
+             <p:messages autoUpdate="true"/>
+            <h:form>
+                        <p:panel header="Usuario Nuevo" style="width:300px">
+                            <h:panelGrid columns="2" cellpadding="5">
+                                <h:outputLabel for="nombre" value="Nombre:" />
+                                <p:inputText value="#{cUsuario.nombre}" id="nombreUsu"
+                                             required="true" label="nombre" />
+
+                                <h:outputLabel for="cedula" value="Cédula:" />
+                                <p:inputText value="#{cUsuario.cedula}" id="cedulaUsu"
+                                             required="true" label="cedula" />
+
+                                <h:outputLabel for="contrasena" value="Contraseña:" />
+                                <p:password value="#{cUsuario.contrasena}" id="contrasenaUsu" required="true"
+                                            label="contrasena" />
+
+                                <h:outputLabel for="correo" value="Correo Electrónico:" />
+                                <p:inputText value="#{cUsuario.correo}" id="correoUsu"
+                                             required="true" label="correo" />
+
+                                <f:facet name="footer">
+                                    <p:commandButton id="RegistroButton" value="Registro" 
+                                                     action="#{cUsuario.ingresarUsuario()}" />
+                                </f:facet>
+                            </h:panelGrid>
+                        </p:panel>
+                    </h:form>
+        </ui:define>
+
+    </ui:composition>
+    
+</html>
+
