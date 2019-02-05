@@ -10,80 +10,113 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <link href="#{facesContext.externalContext.requestContextPath}/resources/css/default.css" rel="stylesheet" type="text/css" /> 
         <link href="#{facesContext.externalContext.requestContextPath}/resources/css/cssLayout.css" rel="stylesheet" type="text/css" /> 
+        <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> </link>
+        <!--
+        CSS
+        ============================================= -->
+        <link rel="stylesheet" href="css/linearicons.css"></link>
+        <link rel="stylesheet" href="css/font-awesome.min.css"></link>
+        <link rel="stylesheet" href="css/bootstrap.css"></link>
+        <link rel="stylesheet" href="css/magnific-popup.css"></link>
+        <link rel="stylesheet" href="css/animate.min.css"></link>
+        <link rel="stylesheet" href="css/owl.carousel.css"></link>
+        <link rel="stylesheet" href="css/main.css"></link>
+
+
+
         <title>Flora Andina</title>
     </h:head>
 
     <h:body >
         <div id="top">
             <ui:insert name="top"></ui:insert>
-            <div id="background">
-                <p:imageCompare leftImage="/Imagenes/paisaje1.jpg"
-                                rightImage="/Imagenes/paisaje2.jpg"
-                                width="100%" height="300"/> 
-            </div>
-            <div id="menu">
-                <h:form>  
-                    <p:growl id="messages"/>
+            <h:form class="banner-area" id="home">
+                <!-- Start Header Area -->
+                <h:head class="default-header">
 
-                    <p:menubar>
-                        <p:menuitem value="Inicio" outcome="/Templates/PantallaPrincipal.xhtml?faces-redirect=true" />
+                    <nav class="navbar navbar-expand-lg  navbar-light">
+                        <div class="item-slider relative" style="background: url(img/slider1.jpg); width: 100%; height: 800px; background-size: cover;">
+                            <a class="navbar-brand" href="/ProyectoFloraandina/index.html">
+                                <img src="img/logo.png" alt=""></img>
+                            </a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="text-white lnr lnr-menu"></span>
+                            </button>
 
-                        <p:submenu label="Galerias" icon="pi pi-file">
-                            <p:menuitem value="General" outcome="/Templates/galeriaGeneral.xhtml?faces-redirect=true" />
-                            <p:separator />
-                            <p:menuitem value="Tecnica" outcome="/Templates/galeriaTecnica.xhtml?faces-redirect=true" />
-                            <p:separator />
-                            <p:menuitem value="Archivos" url="#" />
-                        </p:submenu>
-                        <p:menuitem value="Quienes Somos" outcome="/Templates/QuienesSomos.xhtml?faces-redirect=true"  />
-                        <p:menuitem value="Contactos" outcome="/Templates/Contacto.xhtml?faces-redirect=true" />
+                            <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
+                                <ul class="navbar-nav">
+                                    <li><a href="/ProyectoFloraandina/index.html">REGRESAR</a></li>
+                                    
+                                    <!-- Dropdown -->
+
+                                </ul>
+                            </div>
+                            <!--menu mogeo-->
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <div>
+                                <center>
+                                    <div id="menu"  >
+                                    <h:form>  
+                                        <p:growl id="messages"/>
+
+                                        <p:growl id="growl" sticky="true" showDetail="true" />
+
+                                        <p:messages autoUpdate="true" showDetail="true"/>
+                                        <h:form>
+                                            <p:panel header="Login" style="width:400px; background: black;">
+                                                <h:panelGrid columns="2" cellpadding="5">
+                                                    <h:outputLabel for="username" value="Cédula:" style=" color: white;"/>
+                                                    <p:inputText value="#{cLogin.strCedula}" id="username"
+                                                                 required="true" label="username" style="width: 100%;" />
+                                                    <h:outputLabel for="password" value="Clave:" style=" color: white;"/>
+                                                    <p:password value="#{cLogin.strClave}" id="password" required="true"
+                                                                label="password" />
+
+                                                    <h:column />
+                                                    <p:commandButton id="loginButton" value="Login" icon="ui-icon-key" 
+                                                                     action="#{cLogin.login()}"  />                            
+
+                                                </h:panelGrid>
+                                            </p:panel>
+                                        </h:form>
 
 
-                    </p:menubar>
-                    <p:growl id="growl" sticky="true" showDetail="true" />
+                                    </h:form>
+                                </div>
+                                    </center>
+                            </div>
+                            <!-- fin menu logeo-->
 
-                    <p:messages autoUpdate="true" showDetail="true"/>
-                    <h:form>
-                        <p:panel header="Login" style="width:300px">
-                            <h:panelGrid columns="2" cellpadding="5">
-                                <h:outputLabel for="username" value="Cédula:" />
-                                <p:inputText value="#{cLogin.strCedula}" id="username"
-                                             required="true" label="username" />
-                                <h:outputLabel for="password" value="Clave:" />
-                                <p:password value="#{cLogin.strClave}" id="password" required="true"
-                                            label="password" />
+                        </div>
+                    </nav>
+                </h:head>
+                <!-- End Header Area -->				
+            </h:form>
 
-                                <h:column />
-                                <p:commandButton id="loginButton" value="Login" icon="ui-icon-key" 
-                                                 action="#{cLogin.login()}"  />                            
-
-                            </h:panelGrid>
-                        </p:panel>
-                    </h:form>
-
-
-                </h:form>
-            </div>
         </div>
+
+
+
         <div>
 
             <div id="content" class="center_content" >
                 <ui:insert name="content"></ui:insert>
                 <div id="fondo">
 
-<!--<img src="#{facesContext.externalContext.requestContextPath}/Imagenes/fondo2.jpg" width="100%"></img>-->
+
                 </div>
 
             </div>
         </div>
         <div id="bottom">
             <ui:insert name="bottom"></ui:insert>
-            <div>
-                <h:form>
-                    <h2>"Dirección: Panamericana Sur km 1 1/2, Riobamba-Ecuador | Teléfono: 593(03) 2998-200 | Telefax: (03)2317-001 | Código Postal: EC060155"</h2>
-                </h:form>
 
-            </div>
         </div>
 
     </h:body>
