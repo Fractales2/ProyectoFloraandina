@@ -66,8 +66,8 @@ public class floraManagedBean implements Serializable {
           
     //funciones
     public void ingresarFlora() {
-        try {
-            if (floraLN.insertarFlora(floranuevo)) {
+        
+           /* if (floraLN.insertarFlora(floranuevo)) {
                 FacesMessage facesMsg = new FacesMessage(FacesMessage.SEVERITY_INFO,
                         "Ingreso correcto ", "Los datos se guadaron correctamente");
                 FacesContext.getCurrentInstance().addMessage("successInfo", facesMsg);
@@ -75,6 +75,6 @@ public class floraManagedBean implements Serializable {
             }
         } catch (Exception ex) {
             System.out.println("Error: " + ex.getMessage());
-        }
+        }*/
     }
 }

@@ -19,9 +19,12 @@ import logica.reservaLN;
 @Named(value = "reservaManagedBean")
 @SessionScoped
 public class reservaManagedBean implements Serializable {
-    private ArrayList<Reservas> listareservas;
+    
+    private ArrayList<Reservas> lista;
+    private ArrayList<Reservas> listareserva;
     private Integer Id_Reservas;
     private String Nombre_Res;
+    private String Nombre_ResAUX;
 
     
     /**
@@ -30,16 +33,23 @@ public class reservaManagedBean implements Serializable {
     public reservaManagedBean() {
         cargarReserva();
     }
-    public final void cargarReserva(){
-        listareservas = reservaLN.obtenerReservas();
+   
+        public final ArrayList<String> cargarReserva() {
+      ArrayList<String> lista = new ArrayList<>();  
+        listareserva= reservaLN.obtenerReservas();
+
+        for (Reservas s : listareserva) {
+            
+            lista.add(s.getNombre_Res());
+        }
+        return lista;
+    }
+    public ArrayList<Reservas> getLista() {
+        return lista;
     }
 
-    public ArrayList<Reservas> getListareservas() {
-        return listareservas;
-    }
-
-    public void setListareservas(ArrayList<Reservas> listareservas) {
-        this.listareservas = listareservas;
+    public void setLista(ArrayList<Reservas> lista) {
+        this.lista = lista;
     }
 
     public Integer getId_Reservas() {
@@ -58,5 +68,16 @@ public class reservaManagedBean implements Serializable {
         this.Nombre_Res = Nombre_Res;
     }
     
-    
+    public void ListarReserva(){     
+         lista = reservaLN.obtenerReservas();
+    }
+    public int ingresar() {
+        Reservas objRes = new Reservas();
+        //lista.add(nombreSegmento);
+        objRes.setNombre_Res(Nombre_Res);
+        Reservas res = reservaLN.obtenerIdReserva(objRes);
+        Nombre_ResAUX = res.getId_Reservas().toString();
+        Id_Reservas = Integer.parseInt(Nombre_ResAUX);
+         return Id_Reservas;
+    }
 }

@@ -6,29 +6,33 @@
 package accesodatos;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 
 /**
  *
  * @author ASUS
  */
 public class Flora {
+
     private Integer Id_Flora;
     private Integer Id_User;
     private Integer Id_Familia;
     private String Nombre_Flora;
     private Double UbicacionX;
     private Double UbicacionY;
-    private Date   Recoleccion;
     private String Cod_Herbario;
     private String Ficha;
     private String Nombre_Investigador;
-    private Integer Id_Segmento1;
-    
-     public Flora() {
-     
+    private Integer Id_Reserva;
+    private Date Recoleccion;
+
+    public Flora() {
+
     }
 
-    public Flora(Integer Id_Flora, Integer Id_User, Integer Id_Familia, String Nombre_Flora, Double UbicacionX, Double UbicacionY, Date Recoleccion, String Cod_Herbario, String Nombre_Investigador, String Ficha, Integer Id_Segmento1) {
+    
+
+    public Flora(Integer Id_Flora, Integer Id_User, Integer Id_Familia, String Nombre_Flora, Double UbicacionX, Double UbicacionY, Date Recoleccion, String Cod_Herbario, String Nombre_Investigador, String Ficha, Integer Id_Reserva) {
         this.Id_Flora = Id_Flora;
         this.Id_User = Id_User;
         this.Id_Familia = Id_Familia;
@@ -38,11 +42,27 @@ public class Flora {
         this.Recoleccion = Recoleccion;
         this.Cod_Herbario = Cod_Herbario;
         this.Nombre_Investigador = Nombre_Investigador;
-        this.Ficha = Ficha;
-        this.Id_Segmento1 = Id_Segmento1;
+        this.Id_Reserva = Id_Reserva;
+       
+    }
+    
+    public Integer getId_Reserva() {
+        return Id_Reserva;
     }
 
-   
+    public void setId_Reserva(Integer Id_Reserva) {
+        this.Id_Reserva = Id_Reserva;
+    }
+
+    public String getFicha() {
+        return Ficha;
+    }
+
+    public void setFicha(String Ficha) {
+        this.Ficha = Ficha;
+    }
+
+      
 
     public Integer getId_Flora() {
         return Id_Flora;
@@ -68,23 +88,6 @@ public class Flora {
         this.Id_Familia = Id_Familia;
     }
 
-    public Integer getId_Segmento1() {
-        return Id_Segmento1;
-    }
-
-    public void setId_Segmento1(Integer Id_Segmento1) {
-        this.Id_Segmento1 = Id_Segmento1;
-    }
-
-    public String getFicha() {
-        return Ficha;
-    }
-
-    public void setFicha(String Ficha) {
-        this.Ficha = Ficha;
-    }
-    
-
     public Date getRecoleccion() {
         return Recoleccion;
     }
@@ -92,6 +95,7 @@ public class Flora {
     public void setRecoleccion(Date Recoleccion) {
         this.Recoleccion = Recoleccion;
     }
+
 
     public String getNombre_Flora() {
         return Nombre_Flora;
@@ -117,8 +121,6 @@ public class Flora {
         this.UbicacionY = UbicacionY;
     }
 
-   
-
     public String getCod_Herbario() {
         return Cod_Herbario;
     }
@@ -134,6 +136,5 @@ public class Flora {
     public void setNombre_Investigador(String Nombre_Investigador) {
         this.Nombre_Investigador = Nombre_Investigador;
     }
-    
-    
+
 }

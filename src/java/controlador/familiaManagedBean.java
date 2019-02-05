@@ -30,14 +30,28 @@ public class familiaManagedBean implements Serializable{
      */
     private ArrayList<Familia> listafamilia;
     private Familia familianuevo;
+    private ArrayList<Familia> listafami;
     private Familia familiasel;
     private String nombreFamilia;
+    private String nombreFamiliaAUX;
     private int idfamilia;
     
     public familiaManagedBean() {
         familianuevo = new Familia();
-        cargarFmilia();
+        cargarFamilia();
     }
+     public final ArrayList<String> cargarFamilia() {
+      ArrayList<String> lista = new ArrayList<>();  
+        listafami= familaLN.obtenerFamilias();
+
+        for (Familia s : listafami) {
+            
+            lista.add(s.getNombre_Familia());
+        }
+        return lista;
+    }
+     
+    
     //get and set
      public final void cargarFmilia() {
         listafamilia = familaLN.obtenerFamilias();
@@ -87,6 +101,8 @@ public class familiaManagedBean implements Serializable{
     
     public void ingresarFamilia() {
 
+        
+        
         try {
             if (familaLN.insertarFamilia(familianuevo)) {
                 FacesMessage facesMsg = new FacesMessage(FacesMessage.SEVERITY_INFO,
@@ -97,5 +113,14 @@ public class familiaManagedBean implements Serializable{
         } catch (Exception ex) {
             System.out.println("Error: " + ex.getMessage());
         }
+    }
+    public int ingresar() {
+        Familia objFam = new Familia();
+        //lista.add(nombreSegmento);
+        objFam.setNombre_Familia(nombreFamilia);
+        Familia fam = familaLN.obtenerIdFamilia(objFam);
+        nombreFamiliaAUX = fam.getId_Familia().toString();
+        idfamilia = Integer.parseInt(nombreFamiliaAUX);
+        return idfamilia;
     }
 }

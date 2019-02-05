@@ -11,6 +11,7 @@ import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import java.util.ArrayList;
 import logica.segmentoLN;
+import accesodatos.Segmento;
 
 /**
  *
@@ -24,18 +25,29 @@ public class segmentoManagedBean implements Serializable {
      * Creates a new instance of segmentoManagedBean
      */
     private ArrayList<Segmento> listasegmento;
+    //private ArrayList<Integer> lista;
     private Segmento segmentonuevo;
     private Segmento segmentosel;
     private String nombreSegmento;
+    private String nombreSegmento1;
     private int idsegmento;
-    
+
     public segmentoManagedBean() {
         cargarSegmento();
     }
- 
-     public final void cargarSegmento() {
-         listasegmento = segmentoLN.obtenerSegmento();
+
+    public final ArrayList<String> cargarSegmento() {
+      ArrayList<String> lista = new ArrayList<>();  
+        listasegmento = segmentoLN.obtenerSegmento();
+
+        for (Segmento s : listasegmento) {
+            
+            lista.add(s.getNombre_Segm());
+        }
+        return lista;
     }
+
+    
     public ArrayList<Segmento> getListasegmento() {
         return listasegmento;
     }
@@ -75,13 +87,16 @@ public class segmentoManagedBean implements Serializable {
     public void setIdsegmento(int idsegmento) {
         this.idsegmento = idsegmento;
     }
-    
-        
-   
-    
-   
 
+    public int ingresar() {
+        Segmento objSeg = new Segmento();
+        //lista.add(nombreSegmento);
+        objSeg.setNombre_Segm(nombreSegmento);
+         Segmento seg = segmentoLN.obtenerIdSegmento(objSeg);
+         nombreSegmento1 = seg.getId_Segmento().toString();
+         idsegmento = Integer.parseInt(nombreSegmento1);
+         return idsegmento;
+          
+    }
 
-    
-    
 }

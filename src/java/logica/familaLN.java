@@ -12,22 +12,23 @@ import conexionBD.AccesoDatos;
 import conexionBD.ConjuntoResultado;
 import conexionBD.Parametro;
 import accesodatos.Familia;
+
 /**
  *
  * @author ASUS
  */
 public class familaLN {
-    
-     public static boolean insertarFamilia(Familia familia) {
-       
-         boolean resp = false;
+
+    public static boolean insertarFamilia(Familia familia) {
+
+        boolean resp = false;
         ArrayList<Parametro> lstpar = new ArrayList<>();
         //lstpar.add(new Parametro(1,familia.getId_Familia()));
         lstpar.add(new Parametro(1, familia.getId_Familia()));
         lstpar.add(new Parametro(2, familia.getNombre_Familia()));
-        String sql = "INSERT INTO public.\"FAMILIA\"(\n" +
-"	\"Id_Familia\", \"Nombre_Familia\")\n" +
-    "	VALUES (?,?);";            
+        String sql = "INSERT INTO public.\"FAMILIA\"(\n"
+                + "	\"Id_Familia\", \"Nombre_Familia\")\n"
+                + "	VALUES (?,?);";
         try {
             resp = AccesoDatos.ejecutaComando1(sql, lstpar);
         } catch (Exception ex) {
@@ -36,25 +37,43 @@ public class familaLN {
         }
         return resp;
     }
-     public static ArrayList<Familia> obtenerFamilias(){
-     ArrayList<Familia> listaFamilia = new ArrayList<>();
-     String sql="SELECT * FROM public.\"FAMILIA\";";
-     try{
-     
-     ConjuntoResultado resultado = AccesoDatos.ejecutaQuery(sql);
-     Familia fami;
-     while(resultado.next()){
-     fami = new Familia();
-     //fami.setId_Familia(resultado.getString(0));
-     fami.setNombre_Familia(resultado.getString(1));
-     listaFamilia.add(fami);
-     }
-     }catch (Exception ex){
-         Logger.getLogger(familaLN.class.getName()).log(Level.SEVERE, null, ex);  
-             System.out.println(ex.getMessage());
-     }
-     return listaFamilia;
-     }
-     
-      
+
+    public static ArrayList<Familia> obtenerFamilias() {
+        ArrayList<Familia> listaFamilia = new ArrayList<>();
+        String sql = "SELECT * FROM public.\"FAMILIA\";";
+        try {
+
+            ConjuntoResultado resultado = AccesoDatos.ejecutaQuery(sql);
+            Familia fami;
+            while (resultado.next()) {
+                fami = new Familia();
+                fami.setId_Familia(resultado.getInt(0));
+                fami.setNombre_Familia(resultado.getString(1));
+                listaFamilia.add(fami);
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(familaLN.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex.getMessage());
+        }
+        return listaFamilia;
     }
+     public static Familia obtenerIdFamilia(Familia familia){
+     Familia idfamilia = new Familia();   
+     String sql =  "SELECT \"Id_Familia\"\n" +
+"	FROM public.\"FAMILIA\" WHERE \"Nombre_Familia\"='"+familia.getNombre_Familia()+"';";
+        
+        try {
+        ConjuntoResultado resultado = AccesoDatos.ejecutaQuery(sql);
+        
+        while (resultado.next()){
+            idfamilia.setId_Familia(resultado.getInt(0));
+            
+        }
+        }catch (Exception ex) {
+            Logger.getLogger(familaLN.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex.getMessage());
+    }
+        return idfamilia;
+}
+
+}
