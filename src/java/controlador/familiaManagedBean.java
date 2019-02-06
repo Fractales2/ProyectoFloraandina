@@ -39,6 +39,7 @@ public class familiaManagedBean implements Serializable{
     public familiaManagedBean() {
         familianuevo = new Familia();
         cargarFamilia();
+       
     }
      public final ArrayList<String> cargarFamilia() {
       ArrayList<String> lista = new ArrayList<>();  
@@ -96,13 +97,27 @@ public class familiaManagedBean implements Serializable{
     public void setFamiliasel(Familia familiasel) {
         this.familiasel = familiasel;
     }
+
+    public ArrayList<Familia> getListafami() {
+        return listafami;
+    }
+
+    public void setListafami(ArrayList<Familia> listafami) {
+        this.listafami = listafami;
+    }
+
+    public String getNombreFamiliaAUX() {
+        return nombreFamiliaAUX;
+    }
+
+    public void setNombreFamiliaAUX(String nombreFamiliaAUX) {
+        this.nombreFamiliaAUX = nombreFamiliaAUX;
+    }
     
     //funciones
     
     public void ingresarFamilia() {
-
-        
-        
+       
         try {
             if (familaLN.insertarFamilia(familianuevo)) {
                 FacesMessage facesMsg = new FacesMessage(FacesMessage.SEVERITY_INFO,
@@ -114,6 +129,7 @@ public class familiaManagedBean implements Serializable{
             System.out.println("Error: " + ex.getMessage());
         }
     }
+    
     public int ingresar() {
         Familia objFam = new Familia();
         //lista.add(nombreSegmento);

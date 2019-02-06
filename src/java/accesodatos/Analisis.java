@@ -12,23 +12,23 @@ import javafx.scene.text.Text;
  * @author ASUS
  */
 public class Analisis {
-    private String Id_Segmento;
-    private String Id_Flora;
-    private String Nombre_Tipo;
+    private int Id_Segmento;
+    private int Id_Flora;
     private Double Dimension_Altura;
     private Double Dimension_Ancho;
     private Double Dimension_Razon;
     private Double Dimension_Rango;
-    private Text Descripcion;
+    private String Descripcion;
+    private String Ficha;
     
      public Analisis() {
     
     }
 
-    public Analisis(String Id_Segmento, String Id_Flora, String Nombre_Tipo, Double Dimension_Altura, Double Dimension_Ancho, Double Dimension_Razon, Double Dimension_Rango, Text Descripcion) {
+    public Analisis(int Id_Segmento, int Id_Flora, String Ficha, Double Dimension_Altura, Double Dimension_Ancho, Double Dimension_Razon, Double Dimension_Rango, String Descripcion) {
         this.Id_Segmento = Id_Segmento;
         this.Id_Flora = Id_Flora;
-        this.Nombre_Tipo = Nombre_Tipo;
+        this.Ficha = Ficha;
         this.Dimension_Altura = Dimension_Altura;
         this.Dimension_Ancho = Dimension_Ancho;
         this.Dimension_Razon = Dimension_Razon;
@@ -36,32 +36,32 @@ public class Analisis {
         this.Descripcion = Descripcion;
     }
 
-   
-
-    public String getId_Segmento() {
+    public int getId_Segmento() {
         return Id_Segmento;
     }
 
-    public void setId_Segmento(String Id_Segmento) {
+    public void setId_Segmento(int Id_Segmento) {
         this.Id_Segmento = Id_Segmento;
     }
 
-   public String getId_Flora() {
+    public int getId_Flora() {
         return Id_Flora;
     }
 
-    public void setId_Flora(String Id_Flora) {
+    public void setId_Flora(int Id_Flora) {
         this.Id_Flora = Id_Flora;
     }
 
-    public String getNombre_Tipo() {
-        return Nombre_Tipo;
+
+    public String getFicha() {
+        return Ficha;
     }
 
-    public void setNombre_Tipo(String Nombre_Tipo) {
-        this.Nombre_Tipo = Nombre_Tipo;
+    public void setFicha(String Ficha) {
+        this.Ficha = Ficha;
     }
 
+    
     public Double getDimension_Altura() {
         return Dimension_Altura;
     }
@@ -94,13 +94,15 @@ public class Analisis {
         this.Dimension_Rango = Dimension_Rango;
     }
 
-    public Text getDescripcion() {
+    public String getDescripcion() {
         return Descripcion;
     }
 
-    public void setDescripcion(Text Descripcion) {
+    public void setDescripcion(String Descripcion) {
         this.Descripcion = Descripcion;
     }
+
+    
     
     
 }

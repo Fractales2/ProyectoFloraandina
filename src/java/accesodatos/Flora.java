@@ -5,8 +5,7 @@
  */
 package accesodatos;
 
-import java.sql.Date;
-import java.sql.Timestamp;
+import java.util.Date;
 
 /**
  *
@@ -21,10 +20,9 @@ public class Flora {
     private Double UbicacionX;
     private Double UbicacionY;
     private String Cod_Herbario;
-    private String Ficha;
     private String Nombre_Investigador;
     private Integer Id_Reserva;
-    private Date Recoleccion;
+    private String Recoleccion;
 
     public Flora() {
 
@@ -32,7 +30,7 @@ public class Flora {
 
     
 
-    public Flora(Integer Id_Flora, Integer Id_User, Integer Id_Familia, String Nombre_Flora, Double UbicacionX, Double UbicacionY, Date Recoleccion, String Cod_Herbario, String Nombre_Investigador, String Ficha, Integer Id_Reserva) {
+    public Flora(Integer Id_Flora, Integer Id_User, Integer Id_Familia, String Nombre_Flora, Double UbicacionX, Double UbicacionY, String Recoleccion, String Cod_Herbario, String Nombre_Investigador, Integer Id_Reserva) {
         this.Id_Flora = Id_Flora;
         this.Id_User = Id_User;
         this.Id_Familia = Id_Familia;
@@ -52,17 +50,7 @@ public class Flora {
 
     public void setId_Reserva(Integer Id_Reserva) {
         this.Id_Reserva = Id_Reserva;
-    }
-
-    public String getFicha() {
-        return Ficha;
-    }
-
-    public void setFicha(String Ficha) {
-        this.Ficha = Ficha;
-    }
-
-      
+    }      
 
     public Integer getId_Flora() {
         return Id_Flora;
@@ -88,13 +76,15 @@ public class Flora {
         this.Id_Familia = Id_Familia;
     }
 
-    public Date getRecoleccion() {
+    public String getRecoleccion() {
         return Recoleccion;
     }
 
-    public void setRecoleccion(Date Recoleccion) {
+    public void setRecoleccion(String Recoleccion) {
         this.Recoleccion = Recoleccion;
     }
+
+    
 
 
     public String getNombre_Flora() {

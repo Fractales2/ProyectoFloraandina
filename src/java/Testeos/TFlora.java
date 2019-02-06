@@ -31,7 +31,7 @@ public class TFlora {
         Date Recoleccion = new SimpleDateFormat().parse("2012/02/01");
         //usu.setRecoleccion(Recoleccion);
         usu.setId_Reserva(1);
-        floraLN.insertarFlora(usu, 1, 1, 1);
+        floraLN.insertarFlora(usu);
 
     }
 }

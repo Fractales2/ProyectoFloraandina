@@ -10,84 +10,84 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <link href="#{facesContext.externalContext.requestContextPath}/resources/css/default.css" rel="stylesheet" type="text/css" /> 
         <link href="#{facesContext.externalContext.requestContextPath}/resources/css/cssLayout.css" rel="stylesheet" type="text/css" /> 
-        <title>Flora Andina</title>
-        <f:event type="preRenderView" listener="#{cVerificarSesion.verificarSesion()}" />
+        <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> </link>
+        <!--
+        CSS
+        ============================================= -->
+        <link rel="stylesheet" href="#{facesContext.externalContext.requestContextPath}/css/linearicons.css"></link>
+        <link rel="stylesheet" href="#{facesContext.externalContext.requestContextPath}/css/font-awesome.min.css"></link>
+        <link rel="stylesheet" href="#{facesContext.externalContext.requestContextPath}/css/bootstrap.css"></link>
+        <link rel="stylesheet" href="#{facesContext.externalContext.requestContextPath}/css/magnific-popup.css"></link>
+        <link rel="stylesheet" href="#{facesContext.externalContext.requestContextPath}/css/animate.min.css"></link>
+        <link rel="stylesheet" href="#{facesContext.externalContext.requestContextPath}/css/owl.carousel.css"></link>
+        <link rel="stylesheet" href="#{facesContext.externalContext.requestContextPath}/css/main.css"></link>
+        <title>Adventure</title>
+
     </h:head>
 
     <h:body >
 
         <div id="top">
             <ui:insert name="top">
-                <div id="background">
-                    <p:imageCompare leftImage="/Imagenes/paisaje1.jpg"
-                                    rightImage="/Imagenes/paisaje2.jpg"
-                                    width="100%" height="300"/> 
-                </div>
+                <h:form class="banner-area" id="home">
+                    <!-- Start Header Area -->
+                    <h:head class="default-header">
 
-                <h:form>  
-                    <p:growl id="messages"/>
-                    <p:menubar model="#{cMenu.model}">
-                        <f:facet name="options">
-                            <p:commandButton actionListener="#{cMenu.cerrarSesion()}" icon="ui-icon-power" action="/login?faces-redirect=true" title="Cerrar Sesión"/>
-                        </f:facet>
-                    </p:menubar>
+                        <nav class="navbar navbar-expand-lg  navbar-light">
+                            <div class="item-slider relative" style="background: url(#{facesContext.externalContext.requestContextPath}/img/slider3.jpg); width: 100%; height: 800px; background-size: cover;">
+                                <a class="navbar-brand" href="/index.html">
+                                    <img src="#{facesContext.externalContext.requestContextPath}/img/logo.png" alt=""></img>
+                                </a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="text-white lnr lnr-menu"></span>
+                                </button>
+
+                                <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
+                                    <ul class="navbar-nav">
+                                        <li><a href="/ProyectoFloraandina/index.html">INICIO</a></li>
+                                        
+                                        
+                                        <!-- Dropdown -->
+
+                                    </ul>
+                                </div>
+                                <!--menu mogeo-->
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                
+                                <h:form >  
+                                    <p:growl id="messages"/>
+                                    <p:menubar model="#{cMenu.model}" style="background:transparent;">
+                                        <f:facet name="options">
+                                            <p:commandButton actionListener="#{cMenu.cerrarSesion()}" icon="ui-icon-power" action="/login?faces-redirect=true" title="Cerrar Sesión"/>
+                                        </f:facet>
+                                    </p:menubar>
+                                </h:form>
+
+                                <!-- fin menu logeo-->
+
+                            </div>
+                        </nav>
+                    </h:head>
+                    <!-- End Header Area -->				
                 </h:form>
+
 
             </ui:insert>
 
 
         </div>
 
-        <div>
-            <!--<div id="left">
-                <ui:insert name="left">Left</ui:insert>
-            </div>-->
-            <div id="content" class="center_content" >
-                <ui:insert name="content"></ui:insert>
-                <div id="fondo">
-
-<!--<img src="#{facesContext.externalContext.requestContextPath}/Imagenes/fondo2.jpg" width="100%"></img>-->
-                </div>
-
-            </div>
-        </div>
-        <div id="bottom">
-            <ui:insert name="bottom"></ui:insert>
-            <div>
-                <h:form>
-                    <h2>"Dirección: Panamericana Sur km 1 1/2, Riobamba-Ecuador | Teléfono: 593(03) 2998-200 | Telefax: (03)2317-001 | Código Postal: EC060155"</h2>
-                </h:form>
-                <!-- <div id="menu">
-                 <h:form>  
-                     <p:growl id="messages"/>
- 
-                     <p:menubar>
-                         <p:menuitem value="Inicio" url="http://www.primefaces.org" />
- 
-                         <p:submenu label="Galerias" icon="pi pi-file">
-                             <p:menuitem value="General" url="#" />
-                             <p:separator />
-                             <p:menuitem value="Tecnica" url="#" />
-                             <p:separator />
-                             <p:menuitem value="Practica" url="#" />
-                         </p:submenu>
- 
-                         <p:submenu label="Ingresar" icon="pi pi-file">
-                             <p:menuitem value="Usuario" url="#" />
-                             <p:separator />
-                             <p:menuitem value="Planta" url="#" />
-                         </p:submenu>
- 
-                         <p:menuitem value="Quienes Somos" url="http://www.primefaces.org" />
-                         <p:menuitem value="Contactos" url="http://www.primefaces.org" />
- 
- 
-                     </p:menubar>
-                 </h:form>
-             </div>-->
-            </div>
-        </div>
-
+        
     </h:body>
 
 </html>

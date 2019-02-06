@@ -6,18 +6,85 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-    <ui:composition template="./../Templates/IndexPF.xhtml">
-
-
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <link href="#{facesContext.externalContext.requestContextPath}/resources/css/default.css" rel="stylesheet" type="text/css" /> 
         <link href="#{facesContext.externalContext.requestContextPath}/resources/css/cssLayout.css" rel="stylesheet" type="text/css" /> 
+        <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> </link>
+        <!--
+        CSS
+        ============================================= -->
+        <link rel="stylesheet" href="#{facesContext.externalContext.requestContextPath}/css/linearicons.css"></link>
+        <link rel="stylesheet" href="#{facesContext.externalContext.requestContextPath}/css/font-awesome.min.css"></link>
+        <link rel="stylesheet" href="#{facesContext.externalContext.requestContextPath}/css/bootstrap.css"></link>
+        <link rel="stylesheet" href="#{facesContext.externalContext.requestContextPath}/css/magnific-popup.css"></link>
+        <link rel="stylesheet" href="#{facesContext.externalContext.requestContextPath}/css/animate.min.css"></link>
+        <link rel="stylesheet" href="#{facesContext.externalContext.requestContextPath}/css/owl.carousel.css"></link>
+        <link rel="stylesheet" href="#{facesContext.externalContext.requestContextPath}/css/main.css"></link>
+        <title>Adventure</title>
 
-        <ui:define name="content">
+    </h:head>
+    <h:body >
+
+        <div id="top">
+            <ui:insert name="top">
+                <h:form class="banner-area" id="home">
+                    <!-- Start Header Area -->
+                    <h:head class="default-header">
+
+                        <nav class="navbar navbar-expand-lg  navbar-light">
+                            <div class="item-slider relative" style="background: url(#{facesContext.externalContext.requestContextPath}/img/g5.jpg); width: 100%; height: 800px; background-size: cover;">
+                                <a class="navbar-brand" href="/ProyectoFloraandina/index.html">
+                                    <img src="#{facesContext.externalContext.requestContextPath}/img/logo.png" alt=""></img>
+                                </a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="text-white lnr lnr-menu"></span>
+                                </button>
+
+                                <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
+                                    <ul class="navbar-nav">
+                                        <li><a href="/ProyectoFloraandina/index.html">INICIO</a></li>
+
+                                        <!-- Dropdown -->
+
+                                    </ul>
+                                </div>
+                                <!--menu dinamico-->
+                                <br></br>
+                                <br></br>
+                                <br></br>
+
+
+                                <h:form >  
+                                    <p:growl id="messages"/>
+                                    <p:menubar model="#{cMenu.model}" style="background:transparent;">
+                                        <f:facet name="options">
+                                            <p:commandButton actionListener="#{cMenu.cerrarSesion()}" icon="ui-icon-power" action="/login?faces-redirect=true" title="Cerrar Sesión"/>
+                                        </f:facet>
+                                    </p:menubar>
+                                </h:form>
+
+                                <!-- fin menu dinamico-->
+                                <br></br>
+                                <!-- ingresar flora-->
+
+                                <!-- fin ingresar flora-->
+
+                            </div>
+                        </nav>
+                    </h:head>
+                    <!-- End Header Area -->				
+                </h:form>
+
+
+            </ui:insert>
+
+
+        </div>
+        <center>
             <div id="content" class="">
                 <h:form id="frmgaleria" enctype="multipart/form-data">
-                    <ui:insert name="content"></ui:insert>
                     <div id="galeria">
-
                         <h:form id="f1" enctype="multipart/form-data" >
 
                             <p:outputPanel id="restrictPanel" layout="block" style="width:300%;height:100%;border:4px solid #666666;margin-bottom:220px; align-content: center;">
@@ -25,19 +92,16 @@
                                     <h:panelGrid columns="2">
 
                                         <h:outputText value="Nombre *"  style="color: black; font-family: cursive " />
-                                        <p:inputText id="Nombre"  value="#{floraManagedBean.floranuevo.nombre_Flora}" onkeypress="pasardatos()"/>
+                                        <p:inputText id="Nombre"  value="#{floraManagedBean.nombre_Flora}" onkeypress="pasardatos()"/>
 
-                                        
                                         <h:outputText value="Familia *" style="color: black; font-family: cursive "/>
-                                        <p:selectOneMenu id="listafamilia"  value="#{familiaManagedBean.nombreFamilia}" filter="true">
+                                        <p:selectOneMenu id="listafamilia"  value="#{floraManagedBean.nombreFamilia}" filter="true">
                                             <f:selectItem itemLabel="Elija una opción" />
                                             <f:selectItems value="#{familiaManagedBean.cargarFamilia()}" /> 
                                         </p:selectOneMenu>
-                                        
-                                        
 
                                         <h:outputText value="Reserva *" style="color: black; font-family: cursive "/>
-                                        <p:selectOneMenu id="listareserva"  value="#{reservaManagedBean.nombre_Res}" filter="true">
+                                        <p:selectOneMenu id="listareserva"  value="#{floraManagedBean.nombre_Res}" filter="true">
                                             <f:selectItem itemLabel="Elija una opción" />
                                             <f:selectItems value="#{reservaManagedBean.cargarReserva()}" /> 
                                         </p:selectOneMenu>
@@ -45,47 +109,70 @@
                                         <h:outputText value="Ubicación" style="color: black; font-family: cursive; text-align: left "/>
                                         <br><h:outputText value="Ingrese las coordenadas:" style="color: black; font-family: cursive" /></br>
                                         <h:outputText value="Eje X *" style="color: black; font-family: cursive" />
-                                        <p:inputText value="#{floraManagedBean.floranuevo.ubicacionX}"/>
+                                        <p:inputText value="#{floraManagedBean.ubicacionX}"/>
                                         <h:outputText value="Eje Y *" style="color: black; font-family: cursive"/>
-                                        <p:inputText value="#{floraManagedBean.floranuevo.ubicacionY}"/>
+                                        <p:inputText value="#{floraManagedBean.ubicacionY}"/>
                                         <h:outputText value="Fecha de recolección *" style="color: black; font-family: cursive"/>
-                                        <p:calendar id="mask" value="#{floraManagedBean.floranuevo.recoleccion}" pattern="dd-MM-yyyy" mask="true" />
+                                        <p:inputText value="#{floraManagedBean.recoleccion}" />
                                         <h:outputText value="Nombre del investigador *" style="color: black; font-family: cursive"/>
-                                        <p:inputText value="#{floraManagedBean.floranuevo.nombre_Investigador}"/>
-                                        <h:outputText value="Segmento analisado *" style="color: black; font-family: cursive "/>
-                                        
-                                        <p:selectOneMenu id="listasegmento"  value="#{segmentoManagedBean.nombreSegmento}" filter="true">
-                                            <f:selectItem itemLabel="Elija una opción" />
-                                            <f:selectItems value="#{segmentoManagedBean.cargarSegmento()}" /> 
-                                        </p:selectOneMenu>
-                                        
-                                        
-                                         <p:commandButton  id="registro" value="Registro" 
-                                                           action="#{reservaManagedBean.ingresar()}" />
+                                        <p:inputText value="#{floraManagedBean.nombre_Investigador}"/>
+
+
+
+
+
+
 
                                     </h:panelGrid>
 
                                     <p:commandButton value="Ingresar Imagenes"  onclick="PF('img1').show();"/>
-                                    
-                                    <p:commandButton value="Guardar" action="#{imagenManagedBean.ingresarImagen()}" />
-                                    
+
+                                    <h:commandButton value="Guardar" action="#{floraManagedBean.ingresarFlora()}" />
+
                                 </p:panel>
                             </p:outputPanel>
                         </h:form>
+
                     </div>
                 </h:form>
+                
+                <!--pantalla flotante-->
+                <p:dialog header="Escoger Imagenes" widgetVar="img1" showEffect="explode" hideEffect="bounce" height="500" width="50%" style=" background: black;">
 
-                <p:dialog header="Escoger Imagenes" widgetVar="img1" showEffect="explode" hideEffect="bounce" height="500" width="50%">
                     <h:form>
-                        <h:outputLabel for="codigo" value="Código:" />
-                        <p:inputText value="#{floraManagedBean.floranuevo.ficha}" id="codigo"
-                                     required="true" label="codigo" />    
+                        <h:outputText value="Segmento analisado *" style="color: white; font-family: cursive "/>
+                        <p:selectOneMenu id="listasegmento"  value="#{analisisManagedBean.nombreSegmento}" filter="true">
+                            <f:selectItem itemLabel="Elija una opción"/>
+                            <f:selectItems value="#{analisisManagedBean.cargarSegmento()}" /> 
+                        </p:selectOneMenu>
+
+
+                        <br></br>
+
+                        <br></br>
+
+                        <h:panelGrid columns="2">
+                            <h:outputText  value="Altura*"  style="color: white; font-family: cursive"/>
+                            <p:inputText   value="#{analisisManagedBean.dimension_Altura}" />
+                            <h:outputText value="Ancho *" style="color: white; font-family: cursive"/>
+                            <p:inputText value="#{analisisManagedBean.dimension_Ancho}" />
+                            <h:outputText  value="Rango*"  style="color: white; font-family: cursive"/>
+                            <p:inputText   value="#{analisisManagedBean.dimension_Rango}" />
+                            <h:outputText  value="Descripción*"  style="color: white; font-family: cursive"/>
+                            <p:editor id="editor" widgetVar="editorWidget" value="#{analisisManagedBean.descripcion}" width="600" />
+
+
+                        </h:panelGrid>
+                        <h:form>
+                            <h:commandButton value="Guardar" action="#{analisisManagedBean.ingresarAnalisis()}" />
+                        </h:form>
                     </h:form>
 
-                    <br><h:outputLabel value="Galeria General" style="color: black;"/></br>
 
-                    <h:outputLabel value="Elegir Imágenes" style="color: black; font-family: cursive"/>
+                    <br><h:outputText value="Galeria General" style="color: white; font-family: cursive"/></br>
 
+                    <h:outputText value="" style="color: white; font-family: cursive"/>
+                    Elegir Imagenes
                     <h:form id="formActualizarFoto">
                         <br><p:fileUpload fileUploadListener="#{uploadBean.handleFileUpload}" mode="advanced" multiple="true" dragDropSupport="false"
                                           update="messages" sizeLimit="1000000" fileLimit="10" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" oncomplete="PF('dlgActualizarFoto').hide()" fileLimitMessage="El maximo de imagenes es 10"  invalidFileMessage="Se debe seleccionar una imagen"
@@ -93,10 +180,9 @@
 
                             <p:growl id="messages" showDetail="true" /></br>
                     </h:form>
+                    <br><h:outputText value="Galeria Tecnica" style="color: white; font-family: cursive"/></br>
 
-                    <br><h:outputLabel value="Galeria Tecnica" style="color: black;"/></br>
-
-                    <h:outputLabel value="Imagen Frontal" style="color: black; font-family: cursive"/>
+                    <h:outputText value="Imagen Frontal" style="color: white; font-family: cursive"/>
                     Elegir Imagenes
                     <h:form id="formActualizarFoto1">
                         <p:fileUpload fileUploadListener="#{uploadBean.handleFileUpload1}" mode="advanced" multiple="true" dragDropSupport="false"
@@ -106,9 +192,9 @@
                         <p:growl id="messages" showDetail="true" />
                     </h:form>
 
-                    <br> <h:outputLabel value="Imagen de Corte" style="color: black; font-family: cursive"/></br>
+                    <br> <h:outputText value="Imagen de Corte" style="color: white; font-family: cursive"/></br>
 
-                    <h:outputLabel value="" style="color: black; font-family: cursive"/>
+                    <h:outputText value="" style="color: white; font-family: cursive"/>
                     Elegir Imagenes
                     <h:form id="formActualizarFoto2">
                         <p:fileUpload fileUploadListener="#{uploadBean.handleFileUpload2}" mode="advanced" multiple="true" dragDropSupport="false"
@@ -118,9 +204,9 @@
                         <p:growl id="messages" showDetail="true" />
                     </h:form>
 
-                    <br><h:outputLabel value="Imagen Lateral" style="color: black; font-family: cursive"/></br>
+                    <br><h:outputText value="Imagen Lateral" style="color: white; font-family: cursive"/></br>
 
-                    <h:outputLabel value="" style="color: black; font-family: cursive"/>
+                    <h:outputText value="" style="color: white; font-family: cursive"/>
                     Elegir Imagenes
                     <h:form id="formActualizarFoto3">
                         <p:fileUpload fileUploadListener="#{uploadBean.handleFileUpload3}" mode="advanced" multiple="true" dragDropSupport="false"
@@ -130,9 +216,9 @@
                         <p:growl id="messages" showDetail="true" />
                     </h:form>
 
-                    <br> <h:outputLabel value="Imagen Senital" style="color: black; font-family: cursive"/></br>
+                    <br> <h:outputText value="Imagen Senital" style="color: white; font-family: cursive"/></br>
 
-                    <h:outputLabel value="" style="color: black; font-family: cursive"/>
+                    <h:outputText value="" style="color: white; font-family: cursive"/>
                     Insertar Imagen
                     <h:form id="formActualizarFoto4">
                         <br><p:fileUpload fileUploadListener="#{uploadBean.handleFileUpload4}" mode="advanced" multiple="true" dragDropSupport="false"
@@ -142,9 +228,9 @@
                             <p:growl id="messages" showDetail="true" /></br>
                     </h:form>
 
-                    <br><h:outputLabel value="Galeria de Archivos" style="color: black; font-family: cursive"/></br>
+                    <br><h:outputText value="Galeria de Archivos" style="color: white; font-family: cursive"/></br>
 
-                    <h:outputLabel value="Imagen Frontal" style="color: black; font-family: cursive"/>
+                    <h:outputText value="Imagen Frontal" style="color: white; font-family: cursive"/>
                     Insertar Archivo
                     <h:form id="formActualizarFoto5">
                         <p:fileUpload fileUploadListener="#{uploadBean.handleFileUpload5}" mode="advanced" multiple="true" dragDropSupport="false"
@@ -154,9 +240,9 @@
                         <p:growl id="messages" showDetail="true" />
                     </h:form>
 
-                    <br> <h:outputLabel value="Imagene Corte" style="color: black; font-family: cursive"/></br>
+                    <br> <h:outputText value="Imagene Corte" style="color: white; font-family: cursive"/></br>
 
-                    <h:outputLabel value="" style="color: black; font-family: cursive"/>
+                    <h:outputText value="" style="color: white; font-family: cursive"/>
                     Insertar Archivo
                     <h:form id="formActualizarFoto6">
                         <p:fileUpload fileUploadListener="#{uploadBean.handleFileUpload6}" mode="advanced" multiple="true" dragDropSupport="false"
@@ -166,9 +252,9 @@
                         <p:growl id="messages" showDetail="true" />
                     </h:form>
 
-                    <br> <h:outputLabel value="Imagen Lateral" style="color: black; font-family: cursive"/></br>
+                    <br> <h:outputText value="Imagen Lateral" style="color: white; font-family: cursive"/></br>
 
-                    <h:outputLabel value="" style="color: black; font-family: cursive"/>
+                    <h:outputText value="" style="color: white; font-family: cursive"/>
                     Insertar Archivo
                     <h:form id="formActualizarFoto7">
                         <p:fileUpload fileUploadListener="#{uploadBean.handleFileUpload7}" mode="advanced" multiple="true" dragDropSupport="false"
@@ -177,24 +263,29 @@
 
                         <p:growl id="messages" showDetail="true" />
                     </h:form>
-                    <br><h:outputLabel value="Imagen Senital" style="color: black; font-family: cursive"/></br>
+                    <br><h:outputText value="Imagen Senital" style="color: white; font-family: cursive"/></br>
 
-                    <h:outputLabel value="" style="color: black; font-family: cursive"/>
+                    <h:outputText value="" style="color: white; font-family: cursive"/>
                     Insertar Archivo
-                    <h:form id="formActualizarFoto8">
+
+                    <h:form id="formActualizarFoto8" enctype="multipart/form-data">
                         <p:fileUpload fileUploadListener="#{uploadBean.handleFileUpload8}" mode="advanced" multiple="true" dragDropSupport="false"
                                       update="messages" sizeLimit="1000000" fileLimit="10" allowTypes="/(\.|\/)(pdf|doc?x)$/" oncomplete="PF('dlgActualizarFoto').hide()" fileLimitMessage="El maximo de archivos es 10"  invalidFileMessage="Se debe seleccionar un archivo .pdf"
                                       cancelLabel="Cancelar" uploadLabel="Actualizar"/>
 
                         <p:growl id="messages" showDetail="true" />
+
+
                     </h:form>
 
                 </p:dialog>
 
             </div>
-        </ui:define>
+        </center>
 
-    </ui:composition>
+
+    </h:body>
+
 
 </html>
 

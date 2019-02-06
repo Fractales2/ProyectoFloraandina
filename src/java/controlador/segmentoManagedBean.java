@@ -12,6 +12,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import logica.segmentoLN;
 import accesodatos.Segmento;
+import javafx.scene.text.Text;
 
 /**
  *
@@ -25,17 +26,29 @@ public class segmentoManagedBean implements Serializable {
      * Creates a new instance of segmentoManagedBean
      */
     private ArrayList<Segmento> listasegmento;
-    //private ArrayList<Integer> lista;
     private Segmento segmentonuevo;
     private Segmento segmentosel;
     private String nombreSegmento;
     private String nombreSegmento1;
     private int idsegmento;
+    
 
     public segmentoManagedBean() {
         cargarSegmento();
     }
 
+    public String getNombreSegmento1() {
+        return nombreSegmento1;
+    }
+
+    public void setNombreSegmento1(String nombreSegmento1) {
+        this.nombreSegmento1 = nombreSegmento1;
+    }
+
+    
+    
+    
+    //Funcion
     public final ArrayList<String> cargarSegmento() {
       ArrayList<String> lista = new ArrayList<>();  
         listasegmento = segmentoLN.obtenerSegmento();
@@ -89,8 +102,8 @@ public class segmentoManagedBean implements Serializable {
     }
 
     public int ingresar() {
+        
         Segmento objSeg = new Segmento();
-        //lista.add(nombreSegmento);
         objSeg.setNombre_Segm(nombreSegmento);
          Segmento seg = segmentoLN.obtenerIdSegmento(objSeg);
          nombreSegmento1 = seg.getId_Segmento().toString();
