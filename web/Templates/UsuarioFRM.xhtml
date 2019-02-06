@@ -33,7 +33,7 @@
                     <h:head class="default-header">
 
                         <nav class="navbar navbar-expand-lg  navbar-light">
-                            <div class="item-slider relative" style="background: url(#{facesContext.externalContext.requestContextPath}/img/slider3.jpg); width: 100%; height: 800px; background-size: cover;">
+                            <div class="item-slider relative" style="background: url(#{facesContext.externalContext.requestContextPath}/img/g5.jpg); width: 100%; height: 200px; background-size: cover;">
                                 <a class="navbar-brand" href="/ProyectoFloraandina/index.html">
                                     <img src="#{facesContext.externalContext.requestContextPath}/img/logo.png" alt=""></img>
                                 </a>
@@ -52,11 +52,6 @@
                                 <!--menu dinamico-->
                                 <br></br>
                                 <br></br>
-                                <br></br>
-                                <br></br>
-                                <br></br>
-                                
-
                                 <h:form >  
                                     <p:growl id="messages"/>
                                     <p:menubar model="#{cMenu.model}" style="background:transparent;">
@@ -67,43 +62,8 @@
                                 </h:form>
 
                                 <!-- fin menu dinamico-->
-                                 <br></br>
-                                <br></br>
-                                <br></br>
-                                <!-- ingresar usario-->
-                                <center>
-                                <p:messages autoUpdate="true"/>
-                                <h:form>
-                                    <p:panel header="Usuario Nuevo" style=" background: black; width:400px">
-                                        <h:panelGrid columns="2" cellpadding="5">
-                                            <h:outputLabel for="nombre" value="Nombre:" style=" color: white;" />
-                                            <p:inputText value="#{cUsuario.nombre}" id="nombreUsu"
-                                                         required="true" label="nombre" />
 
-                                            <h:outputLabel for="cedula" value="Cédula:" style=" color: white;"/>
-                                            <p:inputText value="#{cUsuario.cedula}" id="cedulaUsu"
-                                                         required="true" label="cedula" />
 
-                                            <h:outputLabel for="contrasena" value="Contraseña:" style=" color: white;"/>
-                                            <p:password value="#{cUsuario.contrasena}" id="contrasenaUsu" required="true"
-                                                        label="contrasena" />
-
-                                            <h:outputLabel for="correo" value="Correo Electrónico:" style=" color: white;"/>
-                                            <p:inputText value="#{cUsuario.correo}" id="correoUsu"
-                                                         required="true" label="correo" />
-                                            
-                                            <f:facet name="footer">
-                                                <center>
-                                                    <p:commandButton id="RegistroButton" value="Registro" style=" color: black;"
-                                                                 action="#{cUsuario.ingresarUsuario()}" />
-                                                </center>
-                                            </f:facet>
-                                            
-                                        </h:panelGrid>
-                                    </p:panel>
-                                </h:form>
-                                </center>
-                                <!-- fin ingresar usuario-->
 
                             </div>
                         </nav>
@@ -116,29 +76,51 @@
 
 
         </div>
+        <div id="content"  >
+            <ui:insert name="content"></ui:insert>
+            <center>
+                <p:messages autoUpdate="true"/>
+                <h:form>
+                    <p:panel header="Usuario Nuevo" style=" background: black; width:400px">
+                        <h:panelGrid columns="2" cellpadding="5">
+                            <h:outputLabel for="nombre" value="Nombre:" style=" color: white;" />
+                            <p:inputText value="#{cUsuario.nombre}" id="nombreUsu"
+                                         required="true" label="nombre" />
 
-        <div>
+                            <h:outputLabel for="cedula" value="Cédula:" style=" color: white;"/>
+                            <p:inputText value="#{cUsuario.cedula}" id="cedulaUsu"
+                                         required="true" label="cedula" />
+
+                            <h:outputLabel for="contrasena" value="Contraseña:" style=" color: white;"/>
+                            <p:password value="#{cUsuario.contrasena}" id="contrasenaUsu" required="true"
+                                        label="contrasena" />
+
+                            <h:outputLabel for="correo" value="Correo Electrónico:" style=" color: white;"/>
+                            <p:inputText value="#{cUsuario.correo}" id="correoUsu"
+                                         required="true" label="correo" />
+
+                            <f:facet name="footer">
+                                <center>
+                                    <p:commandButton id="RegistroButton" value="Registro" style=" color: black;"
+                                                     action="#{cUsuario.ingresarUsuario()}" />
+                                </center>
+                            </f:facet>
+
+                        </h:panelGrid>
+                    </p:panel>
+                </h:form>
+            </center>
+
+
             <!--<div id="left">
                 <ui:insert name="left">Left</ui:insert>
             </div>-->
-            <div id="content" class="center_content" >
-                <ui:insert name="content"></ui:insert>
-                <div id="fondo">
-
-<!--<img src="#{facesContext.externalContext.requestContextPath}/Imagenes/fondo2.jpg" width="100%"></img>-->
-                </div>
-
-            </div>
-        </div>
-        <div id="bottom">
-            <ui:insert name="bottom"></ui:insert>
-            <div>
 
 
-            </div>
         </div>
 
-        
+
+
     </h:body>
 
 

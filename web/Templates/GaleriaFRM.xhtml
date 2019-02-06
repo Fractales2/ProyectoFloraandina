@@ -33,7 +33,7 @@
                     <h:head class="default-header">
 
                         <nav class="navbar navbar-expand-lg  navbar-light">
-                            <div class="item-slider relative" style="background: url(#{facesContext.externalContext.requestContextPath}/img/g5.jpg); width: 100%; height: 800px; background-size: cover;">
+                            <div class="item-slider relative" style="background: url(#{facesContext.externalContext.requestContextPath}/img/g5.jpg); width: 100%; height: 200px; background-size: cover;">
                                 <a class="navbar-brand" href="/ProyectoFloraandina/index.html">
                                     <img src="#{facesContext.externalContext.requestContextPath}/img/logo.png" alt=""></img>
                                 </a>
@@ -52,9 +52,6 @@
                                 <!--menu dinamico-->
                                 <br></br>
                                 <br></br>
-                                <br></br>
-
-
                                 <h:form >  
                                     <p:growl id="messages"/>
                                     <p:menubar model="#{cMenu.model}" style="background:transparent;">
@@ -65,10 +62,27 @@
                                 </h:form>
 
                                 <!-- fin menu dinamico-->
-                                <br></br>
-                                <!-- ingresar flora-->
+                                
+                               
+
+                            </div>
+                        </nav>
+                    </h:head>
+                    <!-- End Header Area -->				
+                </h:form>
+
+
+            </ui:insert>
+
+
+        </div>
+        <!-- fin del top-->
+        <!-- comienzo del content-->
+        <div id="content" >
+            <ui:insert name="content">
+                 <!-- ingresar flora-->
                                 <center>
-                                    <div id="content" class="">
+                                    <div id="content" class="" >
                                         <h:form id="frmgaleria" enctype="multipart/form-data">
                                             <div id="galeria">
 
@@ -250,19 +264,9 @@
                                     </div>
                                 </center>
                                 <!-- fin ingresar flora-->
-
-                            </div>
-                        </nav>
-                    </h:head>
-                    <!-- End Header Area -->				
-                </h:form>
-
-
             </ui:insert>
-
-
         </div>
-
+<!-- fin del content.-->
         
            
     </h:body>

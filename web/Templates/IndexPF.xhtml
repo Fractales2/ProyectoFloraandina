@@ -34,7 +34,7 @@
                     <h:head class="default-header">
 
                         <nav class="navbar navbar-expand-lg  navbar-light">
-                            <div class="item-slider relative" style="background: url(#{facesContext.externalContext.requestContextPath}/img/slider3.jpg); width: 100%; height: 800px; background-size: cover;">
+                            <div class="item-slider relative" style="background: url(#{facesContext.externalContext.requestContextPath}/img/portada.jpg); width: 100%; height: 800px; background-size: cover;">
                                 <a class="navbar-brand" href="/index.html">
                                     <img src="#{facesContext.externalContext.requestContextPath}/img/logo.png" alt=""></img>
                                 </a>
@@ -44,29 +44,18 @@
 
                                 <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
                                     <ul class="navbar-nav">
-                                        <li><a href="/ProyectoFloraandina/index.html">INICIO</a></li>
-                                        
-                                        
-                                        <!-- Dropdown -->
+                                        <li><a href="GaleriaFRM.xhtml">INICIO</a></li>
 
+                                        <!-- Dropdown -->
                                     </ul>
                                 </div>
                                 <!--menu mogeo-->
                                 <br></br>
                                 <br></br>
-                                <br></br>
-                                <br></br>
-                                <br></br>
-                                <br></br>
-                                <br></br>
-                                <br></br>
-                                <br></br>
-                                <br></br>
-                                <br></br>
-                                
-                                <h:form >  
-                                    <p:growl id="messages"/>
-                                    <p:menubar model="#{cMenu.model}" style="background:transparent;">
+
+                                <h:form style="color: transparent;">  
+                                    <p:growl id="messages" />
+                                    <p:menubar model="#{cMenu.model}" style=" background: transparent;" >
                                         <f:facet name="options">
                                             <p:commandButton actionListener="#{cMenu.cerrarSesion()}" icon="ui-icon-power" action="/login?faces-redirect=true" title="Cerrar Sesión"/>
                                         </f:facet>
@@ -74,9 +63,10 @@
                                 </h:form>
 
                                 <!-- fin menu logeo-->
-
+                               
                             </div>
                         </nav>
+                        
                     </h:head>
                     <!-- End Header Area -->				
                 </h:form>
@@ -86,8 +76,12 @@
 
 
         </div>
+        <div id="content" >
+            <ui:insert name="content">
+                
+            </ui:insert>
+        </div>
 
-        
     </h:body>
 
 </html>

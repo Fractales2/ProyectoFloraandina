@@ -7,25 +7,25 @@
 
     <body>
 
-        <ui:composition template="./../Templates/IndexPF.xhtml">
+        <ui:composition template="./../Templates/GaleriaFRM.xhtml">
 
             <ui:define name="content">
-                <h:outputText value="GALERIA DE CORTE" style="color: white; font-family: cursive " />
+                <h:outputText value="GALERIA DE CORTE" style="color: black; font-family: cursive " />
                 <p:contentFlow value="#{contentFlow.images}" var="image">
                     <p:graphicImage url="../galeriat/corte/#{image}"   styleClass="content" />
                     <div class="caption">#{image}</div>
                 </p:contentFlow>
-                <h:outputText value="GALERIA FRONTAL" style="color: white; font-family: cursive "/>
+                <h:outputText value="GALERIA FRONTAL" style="color: black; font-family: cursive "/>
                 <p:contentFlow value="#{contentFlow.images}" var="image">
                     <p:graphicImage url="../galeriat/frontal/#{image}"   styleClass="content" />
                     <div class="caption">#{image}</div>
                 </p:contentFlow>
-                <h:outputText value="GALERIA LATERAL" style="color: white; font-family: cursive "/>
+                <h:outputText value="GALERIA LATERAL" style="color: black; font-family: cursive "/>
                 <p:contentFlow value="#{contentFlow.images}" var="image">
                     <p:graphicImage url="../galeriat/lateral/#{image}"   styleClass="content" />
                     <div class="caption">#{image}</div>
                 </p:contentFlow>
-                <h:outputText value="GALERIA SENITAL" style="color: white; font-family: cursive "/>
+                <h:outputText value="GALERIA SENITAL" style="color: black; font-family: cursive "/>
                 <p:contentFlow value="#{contentFlow.images}" var="image">
                     <p:graphicImage url="../galeriat/senital/#{image}"   styleClass="content" />
                     <div class="caption">#{image}</div>

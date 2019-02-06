@@ -22,14 +22,14 @@ import javax.persistence.Query;
 public class menuLN {
 
     public static ArrayList<Menu> obtenerMenu() {
+        
         ArrayList<Menu> listaMenu = new ArrayList<>();
 
-        String sql = "SELECT \"codigo\", \"nombre\", \"tipo\", \"tipoUsuario\", \"codigo_submenu\", \"estado\", \"url\"\n"
-                + "FROM public.\"MENU\";";
-
+         String sql = "SELECT * FROM public.\"MENU\";";
         try {
-            ConjuntoResultado resultado = AccesoDatos.ejecutaQuery(sql);
             Menu menu;
+            ConjuntoResultado resultado = AccesoDatos.ejecutaQuery(sql);
+            
             while (resultado.next()) {
                 menu = new Menu();
                 menu.setCodigo(resultado.getInt(0));
