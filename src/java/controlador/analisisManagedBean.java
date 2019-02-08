@@ -25,7 +25,7 @@ import logica.segmentoLN;
  */
 @Named(value = "analisisManagedBean")
 @SessionScoped
-public final class analisisManagedBean implements Serializable {
+public class analisisManagedBean implements Serializable {
 
     /**
      * Creates a new instance of analisisManagedBean
@@ -189,7 +189,7 @@ public final class analisisManagedBean implements Serializable {
 
     }
 
-    public final ArrayList<String> cargarSegmento() {
+    public ArrayList<String> cargarSegmento() {
         ArrayList<String> lista = new ArrayList<>();
         ArrayList<Segmento> listasegmento = segmentoLN.obtenerSegmento();
 
