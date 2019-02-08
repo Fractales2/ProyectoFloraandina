@@ -87,7 +87,7 @@
                     <div id="galeria">
                         <h:form id="f1" enctype="multipart/form-data" >
 
-                            <p:outputPanel  layout="block" style="width:300%;border:4px;margin-bottom:100px; align-content: center;">
+                            <p:outputPanel  layout="block" style="width:300%;border:4px;margin-bottom:200px; align-content: center;">
                                 <p:panel id="conpnl" header="Ingrese los datos:" style="color: black; font-family: cursive">
                                     <h:panelGrid columns="2">
 
@@ -117,12 +117,6 @@
                                         <h:outputText value="Nombre del investigador *" style="color: black; font-family: cursive"/>
                                         <p:inputText value="#{floraManagedBean.nombre_Investigador}"/>
 
-
-
-
-
-
-
                                     </h:panelGrid>
 
                                     <p:commandButton value="Ingresar Imagenes"  onclick="PF('img1').show();"/>
@@ -137,7 +131,7 @@
                 </h:form>
                 
                 <!--pantalla flotante-->
-                <p:dialog header="Escoger Imagenes" widgetVar="img1" showEffect="explode" hideEffect="bounce" height="500" width="50%" style=" background: black;">
+                <p:dialog header="Escoger Imagenes" widgetVar="img1" height="500" width="50%" style=" background: black;">
 
                     <h:form>
                         <h:outputText value="Segmento analisado *" style="color: white; font-family: cursive "/>
@@ -145,12 +139,8 @@
                             <f:selectItem itemLabel="Elija una opción"/>
                             <f:selectItems value="#{analisisManagedBean.cargarSegmento()}" /> 
                         </p:selectOneMenu>
-
-
                         <br></br>
-
                         <br></br>
-
                         <h:panelGrid columns="2">
                             <h:outputText  value="Altura*"  style="color: white; font-family: cursive"/>
                             <p:inputText   value="#{analisisManagedBean.dimension_Altura}" />
@@ -160,12 +150,9 @@
                             <p:inputText   value="#{analisisManagedBean.dimension_Rango}" />
                             <h:outputText  value="Descripción*"  style="color: white; font-family: cursive"/>
                             <p:editor id="editor" widgetVar="editorWidget" value="#{analisisManagedBean.descripcion}" width="600" />
-
-
                         </h:panelGrid>
-                        <h:form>
-                            <h:commandButton value="Guardar" action="#{analisisManagedBean.ingresarAnalisis()}" />
-                        </h:form>
+                        <h:commandButton value="Guardar" action="#{analisisManagedBean.ingresarAnalisis()}" />
+                        
                     </h:form>
 
 

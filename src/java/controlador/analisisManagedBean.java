@@ -25,7 +25,7 @@ import logica.segmentoLN;
  */
 @Named(value = "analisisManagedBean")
 @SessionScoped
-public class analisisManagedBean implements Serializable {
+public final class analisisManagedBean implements Serializable {
 
     /**
      * Creates a new instance of analisisManagedBean
@@ -50,7 +50,6 @@ public class analisisManagedBean implements Serializable {
     private int idsegmento;
     
     public analisisManagedBean() {
-        analisisnuevo = new Analisis();
         cargarSegmento();
         obtenerFlora();
     }
