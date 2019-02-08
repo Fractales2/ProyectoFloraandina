@@ -89,21 +89,21 @@
                 <center>
                     <p:messages autoUpdate="true"/>
                     <h:form>
-                        <p:panel header="Usuario Nuevo" style=" background: black; width:400px">
+                        <p:panel header="Usuario Nuevo" style=" background: white; width:400px">
                             <h:panelGrid columns="2" cellpadding="5">
-                                <h:outputLabel for="nombre" value="Nombre:" style=" color: white;" />
+                                <h:outputLabel for="nombre" value="Nombre:" style=" color: black;" />
                                 <p:inputText value="#{cUsuario.nombre}" id="nombreUsu"
                                              required="true" label="nombre" />
 
-                                <h:outputLabel for="cedula" value="Cédula:" style=" color: white;"/>
+                                <h:outputLabel for="cedula" value="Cédula:" style=" color: black;"/>
                                 <p:inputText value="#{cUsuario.cedula}" id="cedulaUsu"
                                              required="true" label="cedula" />
 
-                                <h:outputLabel for="contrasena" value="Contraseña:" style=" color: white;"/>
+                                <h:outputLabel for="contrasena" value="Contraseña:" style=" color: black;"/>
                                 <p:password value="#{cUsuario.contrasena}" id="contrasenaUsu" required="true"
                                             label="contrasena" />
 
-                                <h:outputLabel for="correo" value="Correo Electrónico:" style=" color: white;"/>
+                                <h:outputLabel for="correo" value="Correo Electrónico:" style=" color: black;"/>
                                 <p:inputText value="#{cUsuario.correo}" id="correoUsu"
                                              required="true" label="correo" />
 

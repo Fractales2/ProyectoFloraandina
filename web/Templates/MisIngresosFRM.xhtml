@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <span class="ui-icon ui-icon-arrowthick-1-n"></span>
+    <body>
+
+        <ui:composition template="./GaleriaFRM.xhtml">
+	    <ui:define name="content">
+		<center>
+		    <h:form id="form">
+			<style type="text/css">
+			    .ui-datalist {
+				width:300px;
+				margin-bottom: 20px;
+			    }
+
+			    .ui-datalist-item {
+				padding:3px;
+			    }
+
+			    .paginated .ui-datalist-data {
+				padding-left: 20px;
+			    }
+			</style>
+			<h:form>
+
+			    <p:dataList value="#{cListaIngresos.list1}" var="flora2" type="unordered" itemType="none" paginator="true" rows="10" styleClass="paginated">
+
+				<f:facet name="header">
+				    ESPECIES
+				</f:facet>
+				<p:commandLink update=":form:especieDetail" oncomplete="PF('carDialog').show()" title="View Detail" styleClass= "ui-icon pi pi-search" style="float:left;margin-right:10px;margin-top:3px; color:#333333">
+				    <f:setPropertyActionListener value="#{flora2}" target="#{cListaIngresos.listaIng}" />
+
+				</p:commandLink>
+				<h:outputText value="#{flora2.nombre_Flora}, #{flora2.nombre_Investigador}" style="display:inline-block"/>
+
+			    </p:dataList>
+			</h:form>
+
+			<p:dialog header="Informaciòn Especie" widgetVar="carDialog" modal="true" showEffect="blind" hideEffect="explode" resizable="false">
+			    <p:outputPanel id="especieDetail" style="text-align:center;">
+				<p:panelGrid  columns="2" rendered="#{not empty cListaIngresos.listaIng}" columnClasses="label,value">
+
+				    <h:outputText value="Nombre Especie:" />
+				    <h:outputText value="#{cListaIngresos.listaIng.nombre_Flora}" />
+
+				    <h:outputText value="Familia" />
+				    <h:outputText value="#{cListaIngresos.listaIng.nombre_Familia}" />
+
+				    <h:outputText value="Reserva" />
+				    <h:outputText value="#{cListaIngresos.listaIng.nombre_Res}"/>
+
+				    <h:outputText value="Ubicacion X" />
+				    <h:outputText value="#{cListaIngresos.listaIng.ubicacionX}" />
+
+				    <h:outputText value="Ubicacion Y" />
+				    <h:outputText value="#{cListaIngresos.listaIng.ubicacionY}" />
+
+				    <h:outputText value="Fecha de recoleccion" />
+				    <h:outputText value="#{cListaIngresos.listaIng.recoleccion}" />
+
+				    <h:outputText value="Nombre Investigador" />
+				    <h:outputText value="#{cListaIngresos.listaIng.nombre_Investigador}" />
+				</p:panelGrid>
+
+
+				<!-- ANALISIS-->
+				<center>
+				<p:dataList value="#{cListaIngresos.listAnal}" var="analisis" type="unordered" itemType="none" paginator="true" rows="1" styleClass="paginated">
+				    <f:facet name="header">
+					ANALISIS
+				    </f:facet>
+				    <p:commandLink update="" oncomplete="PF('analDialog').show()" title="View Detail" styleClass= "ui-icon pi pi-search" style="float:left;margin-right:10px;margin-top:3px;  color: transparent;">
+					<f:setPropertyActionListener value="#{analisis}" target="#{cListaIngresos.listaAnalisis}" />
+					<h:outputText value="#{analisis.nombre_Segm}, #{analisis.id_Flora}" />
+				    </p:commandLink>
+				   			   
+				    <p:panelGrid  columns="2">
+				   <h:outputText value="Ficha"/>
+				   <h:outputText value="#{analisis.ficha}" style="display:inline-block"/>
+				   
+				    <h:outputText value="Nombre Segmento"/>
+				    <h:outputText value="#{analisis.nombre_Segm}" style="display:inline-block"/>
+				    
+				   <h:outputText value="Altura"/>
+				   <h:outputText value="#{analisis.dimension_Altura}" style="display:inline-block"/>
+				   
+				   <h:outputText value="Ancho"/>
+				   <h:outputText value="#{analisis.dimension_Ancho}" style="display:inline-block"/>
+				   
+				   <h:outputText value="Razon"/>
+				   <h:outputText value="#{analisis.dimension_Razon}" style="display:inline-block"/>
+				   
+				   <h:outputText value="Rango"/>
+				   <h:outputText value="#{analisis.dimension_Rango}" style="display:inline-block"/>
+				   
+				   
+				    </p:panelGrid>
+				</p:dataList>
+				</center>
+				<!-- flotante analisis-->
+				
+			    </p:outputPanel>
+			</p:dialog>
+			<br></br>
+			<br></br>
+			<!--<p:dialog header="Analisis" widgetVar="analDialog" modal="true" showEffect="blind" hideEffect="explode" resizable="false">
+			    <p:outputPanel id="analDetail" style="text-align:center;">
+				<p:panelGrid  columns="2" rendered="#{not empty cListaIngresos.listaAnalisis}" columnClasses="label,value">
+
+				    <h:outputText value="Nombre Segmento:" />
+				    <h:outputText value="#{cListaIngresos.listaAnalisis.nombre_Segm}" />
+				  
+				    <h:outputText value="Id Segmento:" />
+				    <h:outputText value="#{cListaIngresos.listaAnalisis.id_Segmento}" />
+
+				    <h:outputText value="Dimensión Altura:" />
+				    <h:outputText value="#{cListaIngresos.listaAnalisis.dimension_Altura}" />
+
+				    <h:outputText value="Dimensión Ancho: " />
+				    <h:outputText value="#{cListaIngresos.listaAnalisis.dimension_Ancho}"/>
+
+				    <h:outputText value="Razón: " />
+				    <h:outputText value="#{cListaIngresos.listaAnalisis.dimension_Razon}"/>
+
+				    <h:outputText value="Rango: " />
+				    <h:outputText value="#{cListaIngresos.listaAnalisis.dimension_Rango}"/>
+
+				    <h:outputText value="Descripción: " />
+				    <h:outputText value="#{cListaIngresos.listaAnalisis.descripcion}"/>
+
+				    <h:outputText value="Ficha: " />
+				    <h:outputText value="#{cListaIngresos.listaAnalisis.ficha}"/> 
+				</p:panelGrid>
+			    </p:outputPanel>
+			</p:dialog>-->
+
+			<!-- FIN ANALISIS-->
+
+		    </h:form>
+
+		</center>
+	    </ui:define>
+        </ui:composition>
+
+    </body>
+</html>
